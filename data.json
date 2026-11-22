@@ -55,20 +55,6 @@
    "feat": false,
    "date": "2026-11-22T18:45:21.297Z",
    "note": ""
-  },
-  {
-   "id": "p1",
-   "title": "Welcome to Times of Lakshadweep",
-   "cat": "News",
-   "img": "",
-   "sum": "Your independent island news and cultural portal is live on GitHub.",
-   "body": "<p>Welcome to <b>Times of Lakshadweep</b>. This website is now live, featuring full coverage of island affairs, administration updates, education, sports, jobs, and lifestyle.</p><p>News editors can log in to the <b>Admin Portal</b> to write, edit, upload photos, and publish new stories in real time.</p>",
-   "tpl": "default",
-   "st": "pub",
-   "feat": true,
-   "author": "Chief Editor",
-   "date": "2026-11-22T00:00:00.000Z",
-   "note": ""
   }
  ],
  "pages": [
