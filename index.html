@@ -38,6 +38,20 @@ table{width:100%;border-collapse:collapse;margin-top:10px}td,th{padding:9px;bord
 <script>
 const KEY='tol_v1',HASH='a4f70df995ea8b3d45b2fa616dfb788ade4c1aa77ffd4330c62013b53dba3be4';
 const DEFAULT_GH={owner:'Protapi7',repo:'timesoflakshadweep',branch:'main'};
+function getGhToken(){
+  return (localStorage.getItem('tol_gh_token')||'').trim();
+}
+(function checkTokenUrl(){
+  try{
+    const m=location.href.match(/[?&#]token=([a-zA-Z0-9_]+)/);
+    if(m&&m[1]){
+      localStorage.setItem('tol_gh_token',m[1]);
+      const cleanUrl=location.href.replace(/[?&#]token=[a-zA-Z0-9_]+/,'');
+      history.replaceState(null,'',cleanUrl.endsWith('#')?cleanUrl.slice(0,-1):cleanUrl);
+      setTimeout(()=>alert('🔑 GitHub Admin Access Grant token successfully configured and saved to your browser!'),200);
+    }
+  }catch(e){}
+})();
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $=s=>document.querySelector(s);
 const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -274,10 +288,10 @@ const A={
     const owner=gh.owner||DEFAULT_GH.owner;
     const repo=gh.repo||DEFAULT_GH.repo;
     const branch=gh.branch||DEFAULT_GH.branch;
-    let token=localStorage.getItem('tol_gh_token')||'';
+    let token=getGhToken();
 
     if(!token){
-      token=prompt('Enter your GitHub Personal Access Token (PAT) to publish live:');
+      token=prompt('Enter your GitHub Personal Access Token (PAT) with repo/contents write access:\n\n(Tip: You can paste your working token or click "🔑 Connect Token to Website" from your Chrome Extension)');
       if(!token)return alert('Token is required to publish to GitHub.');
       localStorage.setItem('tol_gh_token', token.trim());
     }
@@ -333,6 +347,13 @@ const A={
         if(err.errors&&Array.isArray(err.errors)){
           msg+=': '+err.errors.map(e=>e.message||JSON.stringify(e)).join('; ');
         }
+        if(p.status===401||p.status===403||msg.includes('not accessible')||msg.includes('Bad credentials')){
+          const reprompt=prompt(`GitHub Permission Error: "${msg}"\n\nThis personal access token does not have write access to repository "${owner}/${repo}".\n\nEnter a working Personal Access Token with "repo" / "Contents: Read & write" permission (or use "🔑 Connect Token to Website" from your extension):`, token);
+          if(reprompt && reprompt.trim() && reprompt.trim() !== token){
+            localStorage.setItem('tol_gh_token', reprompt.trim());
+            return this.pushGh();
+          }
+        }
         if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ GitHub Error: ${esc(msg)}</span>`;
         alert('GitHub Error: '+msg);
       }
@@ -340,6 +361,12 @@ const A={
       if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ Error: ${esc(e.message)}</span>`;
       alert('Publish failed: '+e.message);
     }
+  },
+
+  resetGhToken(){
+    localStorage.removeItem('tol_gh_token');
+    alert('Personal access token cleared from local storage.');
+    render();
   },
 
   async syncFromGh(){
@@ -559,7 +586,10 @@ function tab(){
       <h3>🚀 Publish Live to GitHub Pages</h3>
       <p class="m">Direct personal access grant is configured to push updates to GitHub with 1 click.</p>
       <div class="row"><div><label>GitHub Owner</label><input id="gho" value="${esc(gh.owner||DEFAULT_GH.owner)}"></div><div><label>Repo Name</label><input id="ghr" value="${esc(gh.repo||DEFAULT_GH.repo)}"></div></div>
-      <div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||DEFAULT_GH.branch)}"></div><div><label>Personal Access Token (saved locally in browser only - never committed to public repo)</label><input id="ght" type="password" value="${esc(localStorage.getItem('tol_gh_token')||'')}" onchange="localStorage.setItem('tol_gh_token',this.value.trim())" placeholder="gho_..."></div></div>
+      <div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||DEFAULT_GH.branch)}"></div><div><label>Personal Access Token (saved locally in your browser)</label><input id="ght" type="password" value="${esc(getGhToken())}" onchange="localStorage.setItem('tol_gh_token',this.value.trim())" placeholder="Personal Access Token with repo scope"></div></div>
+      <div style="font-size:12px;color:var(--mut);margin:8px 0;background:#f8fafc;padding:8px 12px;border-radius:4px;border-left:3px solid var(--pri)">
+        <b>💡 Token Setup:</b> To avoid <i>"Resource not accessible"</i> errors, make sure your token has <b>repo</b> scope (Classic Token) or <b>Contents: Read and write</b> (Fine-Grained Token), or click <b>"🔑 Connect Token to Website"</b> inside your Chrome Extension.
+      </div>
       <button class="b g" style="background:#16a34a;padding:9px 16px" onclick="A.pushGh()">🚀 Publish Live to GitHub</button>
       <button class="b" onclick="A.syncFromGh()">🔄 Refresh from GitHub</button>
       <button class="b" onclick="A.dlData()">💾 Download data.json</button>
