@@ -5,18 +5,22 @@
 :root[data-theme="dark"]{--bg:#10181f;--fg:#e8eef3;--mut:#9fb0be;--card:#18232c;--bd:#2a3844}
 *{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--font)}
 a{color:inherit;text-decoration:none}img{max-width:100%}.w{max-width:1100px;margin:auto;padding:0 14px}
-header.top{background:var(--bg);color:var(--fg);border-bottom:1px solid var(--fg)}header.top .w{text-align:center;padding:18px 14px 14px;position:relative}
-.top-bar{display:flex;justify-content:space-between;align-items:center;font:11px system-ui;letter-spacing:.08em;padding-bottom:12px;border-bottom:1px solid var(--bd);margin-bottom:14px;color:var(--mut)}
+header.top{background:var(--bg);color:var(--fg);border-bottom:1px solid var(--fg)}header.top .w{text-align:center;padding:16px 14px 14px;position:relative}
+.top-bar{display:flex;justify-content:space-between;align-items:center;font:11px system-ui;letter-spacing:.08em;padding-bottom:10px;border-bottom:1px solid var(--bd);margin-bottom:12px;color:var(--mut)}
 .top-bar a:hover{color:var(--acc)}
 .portal-badge{background:var(--pri);color:#fff!important;padding:4px 10px;border-radius:4px;font-weight:700;display:inline-block}
 .logo{font-size:40px;font-weight:400;letter-spacing:.14em;text-transform:uppercase}.tag{display:block;margin-top:4px;font:11px system-ui;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);opacity:1}
-nav{background:var(--bg);border-bottom:1px solid var(--bd);text-align:center;overflow-x:auto;white-space:nowrap}nav a{display:inline-block;font:600 11px system-ui;letter-spacing:.16em;text-transform:uppercase;padding:12px 12px;color:var(--fg)}nav a:hover{color:var(--acc);text-decoration:underline;text-underline-offset:6px}
+nav{background:var(--bg);border-bottom:1px solid var(--bd);text-align:center;overflow-x:auto;white-space:nowrap}nav a{display:inline-block;font:600 11px system-ui;letter-spacing:.16em;text-transform:uppercase;padding:12px 12px;color:var(--fg)}nav a:hover,nav a.on{color:var(--acc);text-decoration:underline;text-underline-offset:6px}
+.cat-strip{background:var(--card);border-bottom:1px solid var(--bd);padding:8px 0;overflow-x:auto;white-space:nowrap;font:12px system-ui}
+.cat-strip .w{display:flex;align-items:center;gap:8px}
+.cat-btn{padding:4px 10px;border-radius:14px;background:var(--bg);border:1px solid var(--bd);color:var(--fg);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.cat-btn:hover,.cat-btn.on{background:var(--pri);color:#fff;border-color:var(--pri)}
 .tick{background:var(--bg);color:var(--mut);border-bottom:1px solid var(--bd);font:12px system-ui;padding:8px 0;overflow-x:auto;white-space:nowrap}.tick b{color:var(--acc);letter-spacing:.14em;font-size:10px;margin-right:10px}.tick a{margin-right:30px}.tick a:hover{color:var(--fg)}
-.g{display:grid;grid-template-columns:2fr 1fr;gap:48px;margin:30px 0}@media(max-width:800px){.g{grid-template-columns:1fr;gap:24px}}
+.g{display:grid;grid-template-columns:2fr 1fr;gap:48px;margin:24px 0}@media(max-width:800px){.g{grid-template-columns:1fr;gap:24px}}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:34px 26px}
 .card{background:none;border:0;border-radius:0;overflow:visible}.card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:0;display:block}.card div{padding:10px 0 0}.card h3{margin:4px 0;font-size:21px;font-weight:400;line-height:1.25}
 .hero{background:none;color:var(--fg);border-radius:0;margin-bottom:34px;display:block}.hero img{width:100%;max-height:none;aspect-ratio:16/9;object-fit:cover;opacity:1;border-radius:0;display:block}.hero div{padding:14px 0 0}.hero h2{font-size:38px;font-weight:400;line-height:1.15;margin:8px 0}.hero .m{color:var(--mut)}
-.m{font:11px system-ui;letter-spacing:.04em;color:var(--mut)}.hero .m{color:var(--mut)}.cat{color:var(--fg);font:600 10px system-ui;letter-spacing:.18em;text-transform:uppercase}
+.m{font:11px system-ui;letter-spacing:.04em;color:var(--mut)}.hero .m{color:var(--mut)}.cat{color:var(--pri);font:700 10px system-ui;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}a.cat:hover{text-decoration:underline}
 .side h4{border:0;border-top:1px solid var(--fg);padding-top:8px;font:600 11px system-ui;letter-spacing:.2em;text-transform:uppercase;margin:0 0 10px}.side li{margin:10px 0;line-height:1.35}.side li a:hover{text-decoration:underline}.side ul{list-style:none;padding:0;margin:0 0 24px}
 .ad{text-align:center;margin:16px 0}.ad small{display:block;font:10px system-ui;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}.ad img{max-height:130px;border-radius:4px}
 article{max-width:720px;margin:0 auto}article h1{font-size:44px;font-weight:400;line-height:1.1;margin:8px 0 12px}article .body{font-size:20px;line-height:1.75}article .body img{border-radius:6px;margin:12px 0}.brk{background:#c1121f;color:#fff;font:700 12px system-ui;display:inline-block;padding:3px 10px;border-radius:3px;letter-spacing:.1em}.big{font-size:48px!important}.full{width:100%;max-height:480px;object-fit:cover;border-radius:6px}
@@ -33,108 +37,329 @@ table{width:100%;border-collapse:collapse;margin-top:10px}td,th{padding:9px;bord
 </style></head><body><div id="app"></div>
 <script>
 const KEY='tol_v1',HASH='a4f70df995ea8b3d45b2fa616dfb788ade4c1aa77ffd4330c62013b53dba3be4';
+const DEFAULT_GH={owner:'Protapi7',repo:'timesoflakshadweep',branch:'main',token:localStorage.getItem('tol_gh_token')||''};
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $=s=>document.querySelector(s);
 const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 const A0=()=>({on:false,type:'img',src:'',link:'',code:''});
 const TPL={standard:'Standard article',breaking:'Breaking news',photo:'Photo story'};
-let D,admin=false;
+let D,admin=false,admCatFilter='all';
 try{admin=sessionStorage.getItem('tol_a')==='1'||localStorage.getItem('tol_a')==='1'}catch(e){}
 
 function seed(){return{
-  s:{name:'Times of Lakshadweep',tag:'News from the islands, first.',logo:'',pri:'#0a6e8a',acc:'#e8590c',font:'Georgia,serif',foot:'\u00a9 Times of Lakshadweep. All rights reserved.',tpl:'standard',gh:{owner:'Protapi7',repo:'timesoflakshadweep',branch:'main',token:''}},
+  s:{name:'Times of Lakshadweep',tag:'News from the islands, first.',logo:'',pri:'#0a6e8a',acc:'#e8590c',font:'Georgia,serif',foot:'\u00a9 Times of Lakshadweep. All rights reserved.',tpl:'standard',gh:{...DEFAULT_GH}},
   user:'admin',
   cats:['News','Politics','Lakshadweep','Education','Sports','Jobs','Feature Stories','Editorial','Religious','Health'],
-  posts:[{id:'p1',title:'Welcome to Times of Lakshadweep',cat:'News',img:'',sum:'Your island news portal is ready.',body:'<p>Open <b>#admin</b> in the address bar or click <b>Admin Access</b> above to log in and publish your stories.</p>',tpl:'default',st:'pub',feat:true,date:new Date().toISOString(),note:''}],
+  posts:[],
   pages:[{id:'about',title:'About Us',body:'<p>Times of Lakshadweep brings news and cultural features from across the Lakshadweep archipelago.</p>',menu:true},{id:'contact',title:'Contact',body:'<p>Write to us with news tips and advertising enquiries.</p>',menu:true}],
   ads:{header:A0(),side:A0(),inart:A0(),footer:A0()},
-  leads:[{id:'l1',src:'Dweep Malayali',title:'LTCC appoints new general secretaries',url:'https://dweepmalayali.com/lakshadweep/20261122/4758.html',done:false},{id:'l2',src:'Dweep Diary',title:'Phoenix Clean Atoll project launched in Chetlat',url:'https://dweepdiary.in/fenix-chetlath/',done:false},{id:'l3',src:'Dweep Malayali',title:'Mahfile Mahabba 2K26 begins Nov 27 in Agatti',url:'https://dweepmalayali.com/lakshadweep/20261121/4755.html',done:false}]
+  leads:[]
 }}
 
-async function load(){let loc=null,pub=null;try{loc=JSON.parse(localStorage.getItem(KEY))}catch(e){}try{const r=await fetch('data.json?'+Date.now());if(r.ok)pub=await r.json()}catch(e){}D=(admin&&loc&&loc.s)?loc:(pub&&pub.s)?pub:(loc&&loc.s)?loc:seed();D.leads=D.leads||[];D.user=D.user||'admin';D.s.gh=D.s.gh||{owner:'Protapi7',repo:'timesoflakshadweep',branch:'main',token:''}}
+// ALWAYS fetch fresh data.json from GitHub Pages as primary truth!
+async function load(forceRemote=false){
+  let pub=null,loc=null;
+  try{loc=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+  try{
+    const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok)pub=await r.json();
+  }catch(e){}
+
+  if(pub&&pub.s){
+    D=pub;
+    if(loc&&loc.pw&&!D.pw)D.pw=loc.pw;
+    if(loc&&loc.user&&!D.user)D.user=loc.user;
+    try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}
+  }else if(loc&&loc.s){
+    D=loc;
+  }else{
+    D=seed();
+  }
+
+  D.posts=D.posts||[];
+  D.cats=D.cats||seed().cats;
+  D.leads=D.leads||[];
+  D.user=D.user||'admin';
+  D.s.gh=D.s.gh||{...DEFAULT_GH};
+  D.s.gh.token=localStorage.getItem('tol_gh_token')||D.s.gh.token||'';
+}
+
 function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){alert('Storage full. Use smaller or fewer images.')}}
 function theme(){const r=document.documentElement.style;r.setProperty('--pri',D.s.pri);r.setProperty('--acc',D.s.acc);r.setProperty('--font',D.s.font);document.title=D.s.name}
 const fd=d=>new Date(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
 const pubs=()=>D.posts.filter(p=>p.st==='pub').sort((a,b)=>b.date.localeCompare(a.date));
 function adh(k){const a=D.ads[k];if(!a||!a.on)return'';let h=a.type==='code'?a.code:(a.src?`<a href="${esc(a.link||'#')}" target="_blank" rel="noopener sponsored"><img src="${esc(a.src)}" alt="Advertisement"></a>`:'');return h?`<div class="ad"><small>Advertisement</small>${h}</div>`:''}
-const meta=p=>`<div class="m"><span class="cat">${esc(p.cat)}</span> \u00b7 ${fd(p.date)} \u00b7 By <b>${esc(D.s.name)}</b></div>`;
+const meta=p=>`<div class="m"><a href="#c-${D.cats.indexOf(p.cat)}" class="cat">${esc(p.cat)}</a> \u00b7 ${fd(p.date)} \u00b7 By <b>${esc(D.s.name)}</b></div>`;
 const im=(p,f)=>p.img?`<img class="${f?'full':''}" src="${esc(p.img)}" alt="" style="width:100%;max-height:480px;object-fit:cover;border-radius:4px;margin:12px 0">`:'';
 const TV={
   standard:p=>`${meta(p)}<h1>${esc(p.title)}</h1>${im(p)}${adh('inart')}<div class="body">${p.body}</div>`,
   breaking:p=>`<span class="brk">BREAKING NEWS</span><h1 class="big">${esc(p.title)}</h1>${meta(p)}${im(p)}${adh('inart')}<div class="body">${p.body}</div>`,
   photo:p=>`${im(p,1)}<h1>${esc(p.title)}</h1>${meta(p)}${adh('inart')}<div class="body">${p.body}</div>`
 };
-const card=p=>`<a class="card" href="#p-${p.id}">${p.img?`<img src="${esc(p.img)}" alt="">`:''}<div><span class="cat">${esc(p.cat)}</span><h3>${esc(p.title)}</h3><span class="m">${fd(p.date)}</span></div></a>`;
+const card=p=>`<div class="card">${p.img?`<a href="#p-${p.id}"><img src="${esc(p.img)}" alt=""></a>`:''}<div><a href="#c-${D.cats.indexOf(p.cat)}" class="cat">${esc(p.cat)}</a><h3><a href="#p-${p.id}">${esc(p.title)}</a></h3><span class="m">${fd(p.date)}</span></div></div>`;
 
-function shell(main,side){
+function shell(main,side,currentCatIdx=-1){
   const now=new Date().toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'short',day:'numeric'});
   const topBar=`<div class="top-bar"><div>📅 ${now}</div><div><a href="#" style="font-weight:700">PUBLIC SITE</a> \u00b7 <a href="#admin" class="portal-badge">🔐 ADMIN ACCESS</a></div></div>`;
   const logoH=D.s.logo?`<img src="${esc(D.s.logo)}" alt="${esc(D.s.name)}" style="max-height:65px;margin:0 auto 8px">`:`<a class="logo" href="#">${esc(D.s.name)}</a>`;
-  const nav=`<a href="#">Home</a>`+D.cats.map((c,i)=>`<a href="#c-${i}">${esc(c)}</a>`).join('')+D.pages.filter(p=>p.menu).map(p=>`<a href="#pg-${p.id}">${esc(p.title)}</a>`).join('')+`<a href="#admin" style="color:var(--acc)">🔐 Admin</a>`;
+  
+  // Navigation links
+  const nav=`<a href="#" class="${currentCatIdx===-1?'on':''}">All News</a>`+D.cats.map((c,i)=>`<a href="#c-${i}" class="${currentCatIdx===i?'on':''}">${esc(c)}</a>`).join('')+D.pages.filter(p=>p.menu).map(p=>`<a href="#pg-${p.id}">${esc(p.title)}</a>`).join('')+`<a href="#admin" style="color:var(--acc)">🔐 Admin</a>`;
+  
+  // Category quick filter buttons strip
+  const catStrip=`<div class="cat-strip"><div class="w"><span style="font-size:11px;color:var(--mut);text-transform:uppercase;font-weight:700">Category:</span><a href="#" class="cat-btn ${currentCatIdx===-1?'on':''}">All</a>${D.cats.map((c,i)=>`<a href="#c-${i}" class="cat-btn ${currentCatIdx===i?'on':''}">${esc(c)}</a>`).join('')}</div></div>`;
+
   const t=pubs().slice(0,6).map(p=>`<a href="#p-${p.id}">${esc(p.title)}</a>`).join('');
-  return`<header class="top"><div class="w">${topBar}${logoH}<span class="tag">${esc(D.s.tag)}</span></div></header><nav><div class="w">${nav}</div></nav>${t?`<div class="tick"><div class="w"><b>LATEST</b>${t}</div></div>`:''}<div class="w">${adh('header')}<div class="g"><main>${main}</main><aside class="side">${side===false?'':sideH()}</aside></div>${adh('footer')}</div><footer><div class="w">${esc(D.s.foot)} \u00b7 All news published by ${esc(D.s.name)} \u00b7 <a href="#">Public Site</a> \u00b7 <a href="#admin" style="color:var(--acc)">🔐 Admin Access</a></div></footer>`
+  return`<header class="top"><div class="w">${topBar}${logoH}<span class="tag">${esc(D.s.tag)}</span></div></header><nav><div class="w">${nav}</div></nav>${catStrip}${t?`<div class="tick"><div class="w"><b>LATEST</b>${t}</div></div>`:''}<div class="w">${adh('header')}<div class="g"><main>${main}</main><aside class="side">${side===false?'':sideH()}</aside></div>${adh('footer')}</div><footer><div class="w">${esc(D.s.foot)} \u00b7 All news published by ${esc(D.s.name)} \u00b7 <a href="#">Public Site</a> \u00b7 <a href="#admin" style="color:var(--acc)">🔐 Admin Access</a></div></footer>`
 }
 
-function sideH(){return adh('side')+`<h4>Latest</h4><ul>${pubs().slice(0,6).map(p=>`<li><a href="#p-${p.id}">${esc(p.title)}</a></li>`).join('')}</ul><h4>Categories</h4><ul>${D.cats.map((c,i)=>`<li><a href="#c-${i}">${esc(c)}</a></li>`).join('')}</ul>`}
-function home(){const L=pubs();if(!L.length)return shell('<p>No news yet.</p>');const h=L.find(p=>p.feat)||L[0];const r=L.filter(p=>p!==h);
-return shell(`<a class="hero" href="#p-${h.id}">${h.img?`<img src="${esc(h.img)}" alt="">`:''}<div><span class="m">${esc(h.cat)}</span><h2>${esc(h.title)}</h2><span class="m">${esc(h.sum)}</span></div></a><div class="cards">${r.map(card).join('')}</div>`)}
-function view(h){if(h.startsWith('p-')){const p=D.posts.find(x=>x.id===h.slice(2));if(!p||(p.st!=='pub'&&!admin))return shell('<p>Story not found.</p>');const t=TV[p.tpl==='default'?D.s.tpl:p.tpl]||TV.standard;return shell(`<article>${p.st!=='pub'?'<div class="note">Draft preview (only you can see this)</div>':''}${t(p)}<p class="m" style="margin-top:20px;border-top:1px solid var(--bd);padding-top:10px">Credit: ${esc(D.s.name)}</p></article>`)}
-if(h.startsWith('c-')){const i=+h.slice(2),c=D.cats[i];return shell(`<h2>${esc(c)}</h2><div class="cards">${pubs().filter(p=>p.cat===c).map(card).join('')||'<p>No stories in this category yet.</p>'}</div>`)}
-if(h.startsWith('pg-')){const p=D.pages.find(x=>x.id===h.slice(3));return shell(p?`<article><h1>${esc(p.title)}</h1><div class="body">${p.body}</div></article>`:'<p>Page not found.</p>')}return home()}
+function sideH(){return adh('side')+`<h4>Latest Headlines</h4><ul>${pubs().slice(0,6).map(p=>`<li><a href="#p-${p.id}">${esc(p.title)}</a></li>`).join('')}</ul><h4>Categories</h4><ul>${D.cats.map((c,i)=>`<li><a href="#c-${i}">${esc(c)}</a></li>`).join('')}</ul>`}
 
-/* ---------- admin ---------- */
+function home(){
+  const L=pubs();
+  if(!L.length)return shell('<p>No published stories yet. Log in to <a href="#admin">Admin</a> to publish.</p>');
+  const h=L.find(p=>p.feat)||L[0];
+  const r=L.filter(p=>p!==h);
+  return shell(`<a class="hero" href="#p-${h.id}">${h.img?`<img src="${esc(h.img)}" alt="">`:''}<div><span class="m">${esc(h.cat)}</span><h2>${esc(h.title)}</h2><span class="m">${esc(h.sum)}</span></div></a><div class="cards">${r.map(card).join('')}</div>`,true,-1);
+}
+
+function view(h){
+  if(h.startsWith('p-')){
+    const p=D.posts.find(x=>x.id===h.slice(2));
+    if(!p||(p.st!=='pub'&&!admin))return shell('<p>Story not found.</p>');
+    const t=TV[p.tpl==='default'?D.s.tpl:p.tpl]||TV.standard;
+    const catIdx=D.cats.indexOf(p.cat);
+    return shell(`<article>${p.st!=='pub'?'<div class="note">Draft preview (only you can see this)</div>':''}${t(p)}<p class="m" style="margin-top:20px;border-top:1px solid var(--bd);padding-top:10px">Credit: ${esc(D.s.name)} · <a href="#c-${catIdx}">More from ${esc(p.cat)} →</a></p></article>`,true,catIdx);
+  }
+  if(h.startsWith('c-')){
+    const i=+h.slice(2),c=D.cats[i];
+    if(!c)return shell('<h2>Category not found</h2>');
+    const list=pubs().filter(p=>p.cat===c);
+    const catSelect=`<div style="margin:8px 0 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--mut)">Switch Category:</span>
+      <select onchange="location.hash='#c-'+this.value" style="padding:6px 10px;border-radius:4px;border:1px solid var(--bd);font:600 13px system-ui">
+        ${D.cats.map((x,idx)=>`<option value="${idx}"${idx===i?' selected':''}>${esc(x)}</option>`).join('')}
+      </select>
+      <a class="b" href="#">← All News</a>
+    </div>`;
+    return shell(`<div style="border-bottom:2px solid var(--fg);padding-bottom:8px;margin-bottom:16px"><span class="cat" style="font-size:12px">Category Archive</span><h1 style="font-size:36px;margin:4px 0">${esc(c)}</h1>${catSelect}</div><div class="cards">${list.map(card).join('')||'<p style="padding:20px 0;color:var(--mut)">No stories published in this category yet.</p>'}</div>`,true,i);
+  }
+  if(h.startsWith('pg-')){
+    const p=D.pages.find(x=>x.id===h.slice(3));
+    return shell(p?`<article><h1>${esc(p.title)}</h1><div class="body">${p.body}</div></article>`:'<p>Page not found.</p>',false);
+  }
+  return home();
+}
+
+/* ---------- admin controllers ---------- */
 const tbar=()=>`<div class="tb">${[['bold','B'],['italic','I'],['underline','U'],['insertUnorderedList','\u2022 List'],['insertOrderedList','1. List']].map(x=>`<button type="button" class="b" onclick="document.execCommand('${x[0]}')">${x[1]}</button>`).join('')}<button type="button" class="b" onclick="document.execCommand('formatBlock',false,'h2')">H2</button><button type="button" class="b" onclick="document.execCommand('formatBlock',false,'h3')">H3</button><button type="button" class="b" onclick="document.execCommand('formatBlock',false,'blockquote')">Quote</button><button type="button" class="b" onclick="var u=prompt('Link URL');if(u)document.execCommand('createLink',false,u)">Link</button><button type="button" class="b" onclick="var u=prompt('Image URL');if(u)document.execCommand('insertImage',false,u)">Image</button></div>`;
 const sel=(id,opts,v)=>`<select id="${id}">${opts.map(o=>`<option value="${esc(o[0])}"${o[0]===v?' selected':''}>${esc(o[1])}</option>`).join('')}</select>`;
-const A={tab:'news',ed:null,
-login(){
-  const u=($('#un').value||'').trim().toLowerCase();
-  const expU=(D.user||'admin').toLowerCase();
-  if(u!==expU){$('#err').textContent='Invalid username';return}
-  sha($('#pw').value).then(h=>{
-    if(h===(D.pw||HASH)){
-      admin=true;
-      try{sessionStorage.setItem('tol_a','1');localStorage.setItem('tol_a','1')}catch(e){}
-      load().then(render)
-    }else $('#err').textContent='Wrong password'
-  })
-},
-logout(){admin=false;try{sessionStorage.removeItem('tol_a');localStorage.removeItem('tol_a')}catch(e){}location.hash='';render()},
-go(t){this.tab=t;this.ed=null;render()},
-up(inp,tid){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,1200/i.width),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);$('#'+tid).value=c.toDataURL('image/jpeg',.78)};i.src=r.result};r.readAsDataURL(f)},
-newPost(n){this.ed={id:'',title:n&&n.title||'',cat:D.cats[0],img:'',sum:'',body:'',tpl:'default',st:'draft',feat:false,note:n&&n.note||''};render()},
-editPost(id){this.ed={...D.posts.find(p=>p.id===id)};render()},
-delPost(id){if(confirm('Delete this story?')){D.posts=D.posts.filter(p=>p.id!==id);save();render()}},
-savePost(){const e=this.ed,t=$('#t').value.trim();if(!t)return alert('Title required');const o={...e,title:t,cat:$('#c').value,img:$('#im').value,sum:$('#sm').value,body:$('#ed').innerHTML,tpl:$('#tp').value,st:$('#st').value,feat:$('#ft').checked,note:$('#nt').value};if(!o.id){o.id='p'+Date.now();o.date=new Date().toISOString();D.posts.unshift(o)}else D.posts[D.posts.findIndex(p=>p.id===o.id)]=o;save();this.ed=null;render()},
-setTpl(all){D.s.tpl=$('#dt').value;if(all)D.posts.forEach(p=>p.tpl=D.s.tpl);save();alert(all?'Template applied to all existing news.':'Default template saved. New news (and posts set to Default) will use it.');render()},
-newPage(){this.ed={id:'',title:'',body:'',menu:true};render()},
-editPage(id){this.ed={...D.pages.find(p=>p.id===id)};render()},
-delPage(id){if(confirm('Delete page?')){D.pages=D.pages.filter(p=>p.id!==id);save();render()}},
-savePage(){const t=$('#t').value.trim();if(!t)return alert('Title required');const o={...this.ed,title:t,body:$('#ed').innerHTML,menu:$('#mn').checked};if(!o.id){o.id='x'+Date.now();D.pages.push(o)}else D.pages[D.pages.findIndex(p=>p.id===o.id)]=o;save();this.ed=null;render()},
-saveAds(){for(const k of ['header','side','inart','footer'])D.ads[k]={on:$('#o-'+k).checked,type:$('#y-'+k).value,src:$('#s-'+k).value,link:$('#l-'+k).value,code:$('#k-'+k).value};save();alert('Ads saved')},
-saveSite(){const s=D.s;s.name=$('#sn').value||s.name;s.tag=$('#st2').value;s.logo=$('#lg').value;s.pri=$('#c1').value;s.acc=$('#c2').value;s.font=$('#fn').value;s.foot=$('#ft2').value;D.cats=$('#ct').value.split('\n').map(x=>x.trim()).filter(Boolean);save();theme();render();alert('Site settings saved!')},
-async saveCredentials(){const u=$('#nu').value.trim(),p=$('#np').value;if(u)D.user=u;if(p){if(p.length<6)return alert('Password must be at least 6 characters');D.pw=await sha(p)}save();alert('Admin credentials updated!')},
-addLead(){const t=$('#lt').value.trim();if(!t)return;D.leads.unshift({id:'l'+Date.now(),src:$('#ls').value,title:t,url:$('#lu').value,done:false});save();render()},
-leadDraft(id){const l=D.leads.find(x=>x.id===id);l.done=true;save();this.tab='news';this.newPost({title:l.title,note:'Lead from '+l.src+': '+l.url})},
-impLeads(){try{const j=JSON.parse($('#li').value);let n=0;if(j&&j.posts){j.posts.forEach((p,i)=>D.posts.unshift({...p,id:'p'+Date.now()+'_'+i,st:'draft',date:p.date||new Date().toISOString()}));save();render();return alert(j.posts.length+' draft(s) imported. Review and publish them under News.')}const a=j;a.forEach(l=>{if(l.url&&!D.leads.some(x=>x.url===l.url)){D.leads.unshift({id:'l'+Date.now()+'_'+n,src:l.src||'',title:l.title||'',url:l.url,done:false});n++}});save();render();alert(n+' new leads imported')}catch(e){alert('Invalid leads JSON')}},
-delLead(id){D.leads=D.leads.filter(l=>l.id!==id);save();render()},
-dlData(){const b=new Blob([JSON.stringify({...D,pw:undefined,leads:D.leads||[]},null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='data.json';a.click();URL.revokeObjectURL(u)},
-async pushGh(){
-  const owner=$('#gho').value.trim(),repo=$('#ghr').value.trim(),branch=$('#ghb').value.trim()||'main',token=$('#ght').value.trim();
-  if(!owner||!repo||!token)return alert('Please enter GitHub Owner, Repo, and Personal Access Token.');
-  D.s.gh={owner,repo,branch,token};save();
-  const st=$('#ghst');st.innerHTML='<span style="color:#0284c7">⏳ Pushing update to GitHub...</span>';
-  try{
-    const url=`https://api.github.com/repos/${owner}/${repo}/contents/data.json`;
-    const h={'Authorization':`Bearer ${token}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'};
-    let sha=null;const g=await fetch(url+'?ref='+branch,{headers:h});if(g.ok){const fd=await g.json();sha=fd.sha}
-    const clean={...D,pw:undefined};
-    const content=btoa(unescape(encodeURIComponent(JSON.stringify(clean,null,2))));
-    const p=await fetch(url,{method:'PUT',headers:h,body:JSON.stringify({message:'Update news data via Admin Panel ['+new Date().toISOString()+']',content,branch,sha:sha||undefined})});
-    if(p.ok){st.innerHTML='<span style="color:#15803d;font-weight:700">🎉 Live update published to GitHub! Changes will reflect in 1-2 minutes.</span>'}
-    else{const e=await p.json();st.innerHTML=`<span style="color:#b91c1c">❌ GitHub Error: ${esc(e.message||'Failed to update')}</span>`}
-  }catch(err){st.innerHTML=`<span style="color:#b91c1c">❌ Network Error: ${esc(err.message)}</span>`}
-},
-imp(){try{const j=JSON.parse($('#bk').value);if(!j.s||!j.posts)throw 0;j.leads=j.leads||[];j.pw=D.pw;D=j;save();theme();render();alert('Restored successfully!')}catch(e){alert('Invalid backup JSON')}}
+
+const A={
+  tab:'news',
+  ed:null,
+
+  login(){
+    const u=($('#un').value||'').trim().toLowerCase();
+    const expU=(D.user||'admin').toLowerCase();
+    if(u!==expU){$('#err').textContent='Invalid username';return}
+    sha($('#pw').value).then(h=>{
+      if(h===(D.pw||HASH)){
+        admin=true;
+        try{sessionStorage.setItem('tol_a','1');localStorage.setItem('tol_a','1')}catch(e){}
+        load().then(render)
+      }else $('#err').textContent='Wrong password'
+    })
+  },
+
+  logout(){
+    admin=false;
+    try{sessionStorage.removeItem('tol_a');localStorage.removeItem('tol_a')}catch(e){}
+    location.hash='';
+    render();
+  },
+
+  go(t){this.tab=t;this.ed=null;render()},
+
+  up(inp,tid){
+    const f=inp.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=()=>{
+      const i=new Image();
+      i.onload=()=>{
+        const k=Math.min(1,1200/i.width),c=document.createElement('canvas');
+        c.width=i.width*k;c.height=i.height*k;
+        c.getContext('2d').drawImage(i,0,0,c.width,c.height);
+        $('#'+tid).value=c.toDataURL('image/jpeg',.78);
+      };
+      i.src=r.result;
+    };
+    r.readAsDataURL(f);
+  },
+
+  newPost(n){
+    this.ed={id:'',title:n&&n.title||'',cat:D.cats[0],img:'',sum:'',body:'',tpl:'default',st:'pub',feat:false,note:n&&n.note||''};
+    render();
+  },
+
+  editPost(id){
+    this.ed={...D.posts.find(p=>p.id===id)};
+    render();
+  },
+
+  async delPost(id){
+    if(confirm('Delete this story?')){
+      D.posts=D.posts.filter(p=>p.id!==id);
+      save();
+      if(confirm('Story deleted locally. Publish changes live to GitHub website now?')){
+        await this.pushGh();
+      }else{
+        render();
+      }
+    }
+  },
+
+  // Save story locally and optionally push live to GitHub
+  async savePost(publishLive=false){
+    const e=this.ed,t=$('#t').value.trim();
+    if(!t)return alert('Title required');
+    const o={
+      ...e,
+      title:t,
+      cat:$('#c').value,
+      img:$('#im').value,
+      sum:$('#sm').value,
+      body:$('#ed').innerHTML,
+      tpl:$('#tp').value,
+      st:$('#st').value,
+      feat:$('#ft').checked,
+      note:$('#nt').value
+    };
+
+    if(!o.id){
+      o.id='p'+Date.now();
+      o.date=new Date().toISOString();
+      D.posts.unshift(o);
+    }else{
+      const idx=D.posts.findIndex(p=>p.id===o.id);
+      if(idx>=0)D.posts[idx]=o;
+    }
+
+    save();
+    this.ed=null;
+
+    if(publishLive){
+      render();
+      alert('Story saved! Publishing live to GitHub now...');
+      await this.pushGh();
+    }else{
+      render();
+      alert('Story saved locally as draft. Click "🚀 Send Live to Website" whenever you want to publish it.');
+    }
+  },
+
+  // Direct push 1 story live
+  async publishSingleStory(id){
+    const p=D.posts.find(x=>x.id===id);
+    if(!p)return;
+    p.st='pub';
+    save();
+    render();
+    await this.pushGh();
+  },
+
+  // Direct push all data.json to GitHub
+  async pushGh(){
+    const gh=D.s.gh||DEFAULT_GH;
+    const owner=gh.owner||DEFAULT_GH.owner;
+    const repo=gh.repo||DEFAULT_GH.repo;
+    const branch=gh.branch||DEFAULT_GH.branch;
+    let token=gh.token||localStorage.getItem('tol_gh_token')||'';
+
+    if(!token){
+      token=prompt('Enter your GitHub Personal Access Token (PAT) to publish live:');
+      if(!token)return alert('Token is required to publish to GitHub.');
+      localStorage.setItem('tol_gh_token', token.trim());
+      D.s.gh.token = token.trim();
+    }
+
+    const st=$('#pub-status')||$('#ghst');
+    if(st)st.innerHTML='<span style="color:#0284c7;font-weight:700">⏳ Publishing live to GitHub website...</span>';
+
+    try{
+      const url=`https://api.github.com/repos/${owner}/${repo}/contents/data.json`;
+      const h={
+        'Authorization':'Bearer '+token,
+        'Accept':'application/vnd.github.v3+json',
+        'Content-Type':'application/json'
+      };
+
+      let sha=null;
+      const g=await fetch(url+'?ref='+branch,{headers:h});
+      if(g.ok){const fd=await g.json();sha=fd.sha;}
+
+      const clean={...D,pw:undefined};
+      const utf8Bytes=new TextEncoder().encode(JSON.stringify(clean,null,1));
+      let binStr='';
+      for(let i=0;i<utf8Bytes.length;i+=0x8000){binStr+=String.fromCharCode(...utf8Bytes.subarray(i,i+0x8000));}
+      const content=btoa(binStr);
+
+      const p=await fetch(url,{
+        method:'PUT',
+        headers:h,
+        body:JSON.stringify({
+          message:'Publish updates via Admin Panel ['+new Date().toISOString()+']',
+          content,
+          branch,
+          sha:sha||undefined
+        })
+      });
+
+      if(p.ok){
+        if(st)st.innerHTML='<span style="color:#15803d;font-weight:700">🎉 Successfully published live to website! Changes will reflect in 1-2 minutes.</span>';
+        alert('🎉 Live news update published to GitHub!\nYour changes will appear on the live website in 1-2 minutes.');
+        render();
+      }else{
+        const err=await p.json().catch(()=>({}));
+        if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ GitHub Error: ${esc(err.message||'Failed to update')}</span>`;
+        alert('GitHub Error: '+(err.message||'Failed to update'));
+      }
+    }catch(e){
+      if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ Error: ${esc(e.message)}</span>`;
+      alert('Publish failed: '+e.message);
+    }
+  },
+
+  async syncFromGh(){
+    alert('Pulling latest stories from GitHub...');
+    await load(true);
+    render();
+    alert('Synced! Now displaying latest data from GitHub.');
+  },
+
+  setTpl(all){
+    D.s.tpl=$('#dt').value;
+    if(all)D.posts.forEach(p=>p.tpl=D.s.tpl);
+    save();
+    alert(all?'Template applied to all existing news.':'Default template saved.');
+    render();
+  },
+
+  newPage(){this.ed={id:'',title:'',body:'',menu:true};render()},
+  editPage(id){this.ed={...D.pages.find(p=>p.id===id)};render()},
+  delPage(id){if(confirm('Delete page?')){D.pages=D.pages.filter(p=>p.id!==id);save();render()}},
+  savePage(){const t=$('#t').value.trim();if(!t)return alert('Title required');const o={...this.ed,title:t,body:$('#ed').innerHTML,menu:$('#mn').checked};if(!o.id){o.id='x'+Date.now();D.pages.push(o)}else D.pages[D.pages.findIndex(p=>p.id===o.id)]=o;save();this.ed=null;render()},
+
+  saveAds(){for(const k of ['header','side','inart','footer'])D.ads[k]={on:$('#o-'+k).checked,type:$('#y-'+k).value,src:$('#s-'+k).value,link:$('#l-'+k).value,code:$('#k-'+k).value};save();alert('Ads saved')},
+  saveSite(){const s=D.s;s.name=$('#sn').value||s.name;s.tag=$('#st2').value;s.logo=$('#lg').value;s.pri=$('#c1').value;s.acc=$('#c2').value;s.font=$('#fn').value;s.foot=$('#ft2').value;D.cats=$('#ct').value.split('\n').map(x=>x.trim()).filter(Boolean);save();theme();render();alert('Site settings saved!')},
+  async saveCredentials(){const u=$('#nu').value.trim(),p=$('#np').value;if(u)D.user=u;if(p){if(p.length<6)return alert('Password must be at least 6 characters');D.pw=await sha(p)}save();alert('Admin credentials updated!')},
+
+  addLead(){const t=$('#lt').value.trim();if(!t)return;D.leads.unshift({id:'l'+Date.now(),src:$('#ls').value,title:t,url:$('#lu').value,done:false});save();render()},
+  leadDraft(id){const l=D.leads.find(x=>x.id===id);l.done=true;save();this.tab='news';this.newPost({title:l.title,note:'Lead from '+l.src+': '+l.url})},
+  impLeads(){try{const j=JSON.parse($('#li').value);let n=0;if(j&&j.posts){j.posts.forEach((p,i)=>D.posts.unshift({...p,id:'p'+Date.now()+'_'+i,st:'draft',date:p.date||new Date().toISOString()}));save();render();return alert(j.posts.length+' draft(s) imported.')}const a=j;a.forEach(l=>{if(l.url&&!D.leads.some(x=>x.url===l.url)){D.leads.unshift({id:'l'+Date.now()+'_'+n,src:l.src||'',title:l.title||'',url:l.url,done:false});n++}});save();render();alert(n+' new leads imported')}catch(e){alert('Invalid leads JSON')}},
+  delLead(id){D.leads=D.leads.filter(l=>l.id!==id);save();render()},
+  dlData(){const b=new Blob([JSON.stringify({...D,pw:undefined,leads:D.leads||[]},null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='data.json';a.click();URL.revokeObjectURL(u)},
+  imp(){try{const j=JSON.parse($('#bk').value);if(!j.s||!j.posts)throw 0;j.leads=j.leads||[];j.pw=D.pw;D=j;save();theme();render();alert('Restored successfully!')}catch(e){alert('Invalid backup JSON')}}
 };
 
 function adminV(){
@@ -149,18 +374,21 @@ function adminV(){
     <p id="err" style="color:#c1121f;margin-top:8px;font-weight:600"></p>
   </div>`;
 
-  const T=[['news','News'],['tpl','Templates'],['pages','Pages'],['ads','Advertising'],['site','Customize'],['leads','Source monitor'],['publish','Publish & GitHub'],['bk','Backup & Restore']];
+  const T=[['news','News & Articles'],['tpl','Templates'],['pages','Pages'],['ads','Advertising'],['site','Customize & Categories'],['leads','Source Monitor'],['publish','Publish & GitHub'],['bk','Backup & Restore']];
   return`<div class="w adm">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--bd);padding-bottom:10px;margin-bottom:14px">
       <div>
         <h2 style="margin:0">${esc(D.s.name)} \u2013 Admin Panel</h2>
         <div style="font-size:12px;color:var(--mut)">Logged in as <b>${esc(D.user||'admin')}</b></div>
       </div>
-      <div style="display:flex;gap:8px;margin-top:6px">
-        <a class="b g" href="#">🌐 View Public Site</a>
+      <div style="display:flex;gap:8px;margin-top:6px;align-items:center">
+        <button class="b" onclick="A.syncFromGh()">🔄 Refresh from GitHub</button>
+        <button class="b g" onclick="A.pushGh()" style="background:#16a34a">🚀 Publish All Live</button>
+        <a class="b p" href="#">🌐 View Public Site</a>
         <button class="b d" onclick="A.logout()">Log out</button>
       </div>
     </div>
+    <div id="pub-status" style="margin-bottom:10px;font-size:13px"></div>
     <div class="tabs">${T.map(t=>`<button class="${A.tab===t[0]?'on':''}" onclick="A.go('${t[0]}')">${t[1]}</button>`).join('')}</div>
     ${tab()}
   </div>`
@@ -169,24 +397,179 @@ function adminV(){
 function tab(){
   const t=A.tab,e=A.ed;
   if(t==='news'){
-    if(e)return`<div class="box"><label>Headline</label><input id="t" value="${esc(e.title)}"><div class="row"><div><label>Category</label>${sel('c',D.cats.map(c=>[c,c]),e.cat)}</div><div><label>Template</label>${sel('tp',[['default','Default ('+TPL[D.s.tpl]+')'],...Object.entries(TPL)],e.tpl)}</div></div><label>Summary</label><input id="sm" value="${esc(e.sum)}"><label>Image (URL or upload)</label><input id="im" value="${esc(e.img)}"><input type="file" accept="image/*" onchange="A.up(this,'im')"><label>Story</label>${tbar()}<div class="ed" id="ed" contenteditable="true">${e.body}</div><div class="row"><div><label>Status</label>${sel('st',[['draft','Draft'],['pub','Published']],e.st)}</div><div><label><input type="checkbox" id="ft"${e.feat?' checked':''}> Featured on home</label></div></div><label>Internal note (never shown publicly)</label><input id="nt" value="${esc(e.note||'')}"><button class="b p" onclick="A.savePost()">Save story</button> <button class="b" onclick="A.go('news')">Cancel</button></div>`;
-    return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><button class="b p" onclick="A.newPost()">+ New news</button><span>${D.posts.length} stories</span></div><table><tr><th>Headline</th><th>Category</th><th>Status</th><th>Date</th><th style="text-align:right">Actions</th></tr>${D.posts.map(p=>`<tr><td><b>${esc(p.title)}</b>${p.feat?' <span style="color:#eab308">\u2605</span>':''}</td><td><span class="cat">${esc(p.cat)}</span></td><td><span class="badge ${p.st==='pub'?'badge-pub':'badge-draft'}">${p.st==='pub'?'Published':'Draft'}</span></td><td>${fd(p.date)}</td><td style="text-align:right"><a class="b" href="#p-${p.id}">View</a> <button class="b" onclick="A.editPost('${p.id}')">Edit</button> <button class="b d" onclick="A.delPost('${p.id}')">Del</button></td></tr>`).join('')}</table>`
+    if(e){
+      const currCat=e.cat||D.cats[0];
+      const catIdx=D.cats.indexOf(currCat);
+      return`<div class="box">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h3 style="margin:0">${e.id?'Edit Story':'✍️ Write New News Article'}</h3>
+          <div style="display:flex;gap:8px">
+            <button class="b g" style="background:#16a34a" onclick="A.savePost(true)">🚀 Save & Publish Live</button>
+            <button class="b p" onclick="A.savePost(false)">💾 Save Draft</button>
+            <button class="b" onclick="A.go('news')">Cancel</button>
+          </div>
+        </div>
+
+        <label>Headline *</label>
+        <input id="t" value="${esc(e.title)}" placeholder="Enter story headline...">
+
+        <div class="row">
+          <div>
+            <label>Category (Which page this story appears on)</label>
+            <div style="display:flex;gap:6px;align-items:center">
+              ${sel('c',D.cats.map(c=>[c,c]),e.cat)}
+              <a class="b" target="_blank" href="#c-${catIdx>=0?catIdx:0}" style="font-size:11px;white-space:nowrap">👁️ View Category Page</a>
+            </div>
+          </div>
+          <div>
+            <label>Template Style</label>
+            ${sel('tp',[['default','Default ('+TPL[D.s.tpl]+')'],...Object.entries(TPL)],e.tpl)}
+          </div>
+        </div>
+
+        <label>Summary (Homepage & card snippet)</label>
+        <input id="sm" value="${esc(e.sum)}" placeholder="Short excerpt for homepage...">
+
+        <div class="row">
+          <div>
+            <label>Cover Image (URL or Upload)</label>
+            <input id="im" value="${esc(e.img)}" placeholder="https://... or upload photo">
+            <input type="file" accept="image/*" onchange="A.up(this,'im')">
+          </div>
+          <div style="padding-top:22px">
+            <label><input type="checkbox" id="ft"${e.feat?' checked':''}> ⭐ Feature on Homepage Top Banner</label>
+            <div style="margin-top:10px">
+              <label>Status</label>
+              ${sel('st',[['pub','🟢 Published (Visible to public)'],['draft','🟡 Draft (Admin only)']],e.st)}
+            </div>
+          </div>
+        </div>
+
+        <label style="margin-top:10px">Full Story Text</label>
+        ${tbar()}
+        <div class="ed" id="ed" contenteditable="true">${e.body}</div>
+
+        <label style="margin-top:12px">Internal Editorial Note</label>
+        <input id="nt" value="${esc(e.note||'')}" placeholder="Sources or notes...">
+
+        <div style="margin-top:16px;display:flex;gap:10px">
+          <button class="b g" style="background:#16a34a;padding:10px 18px" onclick="A.savePost(true)">🚀 Save & Publish Live to Website</button>
+          <button class="b p" style="padding:10px 18px" onclick="A.savePost(false)">💾 Save Local Draft</button>
+          <button class="b" onclick="A.go('news')">Cancel</button>
+        </div>
+      </div>`;
+    }
+
+    // Filter stories by category in admin table
+    const displayList = admCatFilter==='all' ? D.posts : D.posts.filter(p=>p.cat===admCatFilter);
+
+    return`<div class="box">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="b p" onclick="A.newPost()">+ Write New News Article</button>
+          <button class="b g" style="background:#16a34a" onclick="A.pushGh()">🚀 Send All to Live Website</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <label style="margin:0;font-size:12px">Filter Category:</label>
+          <select onchange="admCatFilter=this.value;render()" style="width:auto;margin:0;padding:6px 10px">
+            <option value="all"${admCatFilter==='all'?' selected':''}>All Categories (${D.posts.length})</option>
+            ${D.cats.map(c=>`<option value="${esc(c)}"${admCatFilter===c?' selected':''}>${esc(c)} (${D.posts.filter(p=>p.cat===c).length})</option>`).join('')}
+          </select>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Headline</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th style="text-align:right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${displayList.length?displayList.map(p=>`
+            <tr>
+              <td>
+                <b>${esc(p.title)}</b>
+                ${p.feat?' <span style="color:#eab308;font-size:12px">★ Featured</span>':''}
+              </td>
+              <td>
+                <a href="#c-${D.cats.indexOf(p.cat)}" class="cat" title="Click to view category page">${esc(p.cat)}</a>
+              </td>
+              <td>
+                <span class="badge ${p.st==='pub'?'badge-pub':'badge-draft'}">${p.st==='pub'?'Live':'Draft'}</span>
+              </td>
+              <td>${fd(p.date)}</td>
+              <td style="text-align:right;white-space:nowrap">
+                <button class="b g" style="background:#16a34a;padding:4px 8px;font-size:11px" onclick="A.publishSingleStory('${p.id}')" title="Commit directly to GitHub">🚀 Send Live</button>
+                <a class="b" style="padding:4px 8px;font-size:11px" href="#p-${p.id}">Preview</a>
+                <button class="b p" style="padding:4px 8px;font-size:11px" onclick="A.editPost('${p.id}')">Edit</button>
+                <button class="b d" style="padding:4px 8px;font-size:11px" onclick="A.delPost('${p.id}')">Del</button>
+              </td>
+            </tr>
+          `).join(''):`<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--mut)">No articles found in this category. Click "+ Write New News Article" above.</td></tr>`}
+        </tbody>
+      </table>
+    </div>`;
   }
+
   if(t==='tpl')return`<div class="box"><p>Every story is credited to <b>${esc(D.s.name)}</b> automatically. Pick the template used for new news and for stories set to \u201cDefault\u201d.</p><label>Default template</label>${sel('dt',Object.entries(TPL),D.s.tpl)}<div style="margin-top:10px"><button class="b p" onclick="A.setTpl(0)">Set as default</button> <button class="b" onclick="if(confirm('Apply to ALL existing news?'))A.setTpl(1)">Apply to all existing news</button></div></div>`;
+  
   if(t==='pages'){
     if(e)return`<div class="box"><label>Page title</label><input id="t" value="${esc(e.title)}">${tbar()}<div class="ed" id="ed" contenteditable="true">${e.body}</div><p><label><input type="checkbox" id="mn"${e.menu?' checked':''}> Show in menu</label></p><button class="b p" onclick="A.savePage()">Save page</button> <button class="b" onclick="A.go('pages')">Cancel</button></div>`;
     return`<button class="b p" onclick="A.newPage()">+ New page</button><table><tr><th>Title</th><th>In Menu</th><th style="text-align:right">Actions</th></tr>${D.pages.map(p=>`<tr><td><b>${esc(p.title)}</b></td><td>${p.menu?'Yes':'No'}</td><td style="text-align:right"><a class="b" href="#pg-${p.id}">View</a> <button class="b" onclick="A.editPage('${p.id}')">Edit</button> <button class="b d" onclick="A.delPage('${p.id}')">Del</button></td></tr>`).join('')}</table>`
   }
+
   if(t==='ads')return`<div class="note">Slots: header banner, sidebar, inside article, footer. Use an image + link, or paste ad code (e.g. AdSense).</div>`+[['header','Header banner'],['side','Sidebar'],['inart','Inside article'],['footer','Footer banner']].map(([k,n])=>{const a=D.ads[k];return`<div class="box"><b>${n}</b> <label><input type="checkbox" id="o-${k}"${a.on?' checked':''}> Active</label><div class="row"><div><label>Type</label>${sel('y-'+k,[['img','Image banner'],['code','HTML / ad code']],a.type)}</div><div><label>Click link</label><input id="l-${k}" value="${esc(a.link)}"></div></div><label>Image URL or upload</label><input id="s-${k}" value="${esc(a.src)}"><input type="file" accept="image/*" onchange="A.up(this,'s-${k}')"><label>Ad code</label><textarea id="k-${k}" rows="2">${esc(a.code)}</textarea></div>`}).join('')+`<button class="b p" onclick="A.saveAds()">Save ads</button>`;
-  if(t==='site'){const s=D.s;return`<div class="box"><label>Site name</label><input id="sn" value="${esc(s.name)}"><label>Tagline</label><input id="st2" value="${esc(s.tag)}"><label>Custom Logo (Image URL or Upload)</label><input id="lg" value="${esc(s.logo||'')}"><input type="file" accept="image/*" onchange="A.up(this,'lg')"><div class="row"><div><label>Main colour</label><input id="c1" type="color" value="${s.pri}"></div><div><label>Accent colour</label><input id="c2" type="color" value="${s.acc}"></div></div><label>Font</label>${sel('fn',[['Georgia,serif','Serif (Georgia)'],['system-ui,sans-serif','Sans (System)'],['"Trebuchet MS",sans-serif','Trebuchet'],['"Courier New",monospace','Mono']],s.font)}<label>Footer text</label><input id="ft2" value="${esc(s.foot)}"><label>Categories (one per line, shown in menu)</label><textarea id="ct" rows="8">${esc(D.cats.join('\n'))}</textarea><button class="b p" onclick="A.saveSite()">Save Customizations</button></div>`}
-  if(t==='leads')return`<div class="note"><b>Source Monitor:</b> open each site, spot a new story, add it here as a lead, then convert it into a draft and write it in your own words. Source links stay in the internal note and are never shown to readers.</div><a class="b" target="_blank" rel="noopener" href="https://dweepdiary.in/">Open Dweep Diary</a> <a class="b" target="_blank" rel="noopener" href="https://dweepmalayali.com/">Open Dweep Malayali</a><div class="box" style="margin-top:12px"><label>Import leads or story drafts from the Chrome extension (paste copied JSON)</label><textarea id="li" rows="3"></textarea><button class="b p" onclick="A.impLeads()">Import leads</button></div><div class="box"><div class="row"><div><label>Source</label>${sel('ls',[['Dweep Diary','Dweep Diary'],['Dweep Malayali','Dweep Malayali']],'')}</div><div><label>Story link</label><input id="lu"></div></div><label>Headline / topic</label><input id="lt"><button class="b p" onclick="A.addLead()">Add lead</button></div><table>${D.leads.map(l=>`<tr><td>${esc(l.title)}<div class="m">${esc(l.src)}${l.done?' \u00b7 drafted':''}</div></td><td><a class="b" target="_blank" rel="noopener" href="${esc(l.url)}">Open</a> <button class="b p" onclick="A.leadDraft('${l.id}')">Make draft</button> <button class="b d" onclick="A.delLead('${l.id}')">Del</button></td></tr>`).join('')}</table>`;
+
+  if(t==='site'){
+    const s=D.s;
+    return`<div class="box">
+      <h3>Branding & Categories</h3>
+      <label>Site name</label><input id="sn" value="${esc(s.name)}">
+      <label>Tagline</label><input id="st2" value="${esc(s.tag)}">
+      <label>Custom Logo (Image URL or Upload)</label><input id="lg" value="${esc(s.logo||'')}"><input type="file" accept="image/*" onchange="A.up(this,'lg')">
+      <div class="row"><div><label>Main colour</label><input id="c1" type="color" value="${s.pri}"></div><div><label>Accent colour</label><input id="c2" type="color" value="${s.acc}"></div></div>
+      <label>Font</label>${sel('fn',[['Georgia,serif','Serif (Georgia)'],['system-ui,sans-serif','Sans (System)'],['"Trebuchet MS",sans-serif','Trebuchet'],['"Courier New",monospace','Mono']],s.font)}
+      <label>Footer text</label><input id="ft2" value="${esc(s.foot)}">
+      <label style="margin-top:14px">Categories (One per line — each category creates its own page!)</label>
+      <textarea id="ct" rows="8">${esc(D.cats.join('\n'))}</textarea>
+      <button class="b p" onclick="A.saveSite()">Save Customizations</button>
+    </div>`}
+
+  if(t==='leads')return`<div class="note"><b>Source Monitor:</b> open each site, spot a new story, add it here as a lead, then convert it into a draft.</div><a class="b" target="_blank" rel="noopener" href="https://dweepdiary.in/">Open Dweep Diary</a> <a class="b" target="_blank" rel="noopener" href="https://dweepmalayali.com/">Open Dweep Malayali</a><div class="box" style="margin-top:12px"><label>Import leads or story drafts from the Chrome extension (paste copied JSON)</label><textarea id="li" rows="3"></textarea><button class="b p" onclick="A.impLeads()">Import leads</button></div><div class="box"><div class="row"><div><label>Source</label>${sel('ls',[['Dweep Diary','Dweep Diary'],['Dweep Malayali','Dweep Malayali']],'')}</div><div><label>Story link</label><input id="lu"></div></div><label>Headline / topic</label><input id="lt"><button class="b p" onclick="A.addLead()">Add lead</button></div><table>${D.leads.map(l=>`<tr><td>${esc(l.title)}<div class="m">${esc(l.src)}${l.done?' \u00b7 drafted':''}</div></td><td><a class="b" target="_blank" rel="noopener" href="${esc(l.url)}">Open</a> <button class="b p" onclick="A.leadDraft('${l.id}')">Make draft</button> <button class="b d" onclick="A.delLead('${l.id}')">Del</button></td></tr>`).join('')}</table>`;
+
   if(t==='publish'){
-    const gh=D.s.gh||{owner:'Protapi7',repo:'timesoflakshadweep',branch:'main',token:''};
-    return`<div class="box"><h3>🚀 Publish Live to GitHub</h3><p class="m">Directly push your news data to GitHub Pages with 1 click, or download <code>data.json</code>.</p><div class="row"><div><label>GitHub Owner</label><input id="gho" value="${esc(gh.owner)}"></div><div><label>Repo Name</label><input id="ghr" value="${esc(gh.repo)}"></div></div><div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||'main')}"></div><div><label>GitHub Personal Access Token (PAT)</label><input id="ght" type="password" value="${esc(gh.token||'')}" placeholder="ghp_..."></div></div><button class="b p" onclick="A.pushGh()">🚀 Push Live to GitHub</button> <button class="b g" onclick="A.dlData()">💾 Download data.json</button><div id="ghst" style="margin-top:10px"></div></div><div class="box"><h3>🔐 Change Admin Credentials</h3><div class="row"><div><label>Username</label><input id="nu" value="${esc(D.user||'admin')}"></div><div><label>New Password (leave blank to keep current)</label><input id="np" type="password"></div></div><button class="b p" onclick="A.saveCredentials()">Update Credentials</button></div>`
+    const gh=D.s.gh||DEFAULT_GH;
+    return`<div class="box">
+      <h3>🚀 Publish Live to GitHub Pages</h3>
+      <p class="m">Direct personal access grant is configured to push updates to GitHub with 1 click.</p>
+      <div class="row"><div><label>GitHub Owner</label><input id="gho" value="${esc(gh.owner||DEFAULT_GH.owner)}"></div><div><label>Repo Name</label><input id="ghr" value="${esc(gh.repo||DEFAULT_GH.repo)}"></div></div>
+      <div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||DEFAULT_GH.branch)}"></div><div><label>Personal Access Token (saved in your browser)</label><input id="ght" type="password" value="${esc(localStorage.getItem('tol_gh_token')||gh.token||'')}" onchange="localStorage.setItem('tol_gh_token',this.value.trim())"></div></div>
+      <button class="b g" style="background:#16a34a;padding:9px 16px" onclick="A.pushGh()">🚀 Publish Live to GitHub</button>
+      <button class="b" onclick="A.syncFromGh()">🔄 Refresh from GitHub</button>
+      <button class="b" onclick="A.dlData()">💾 Download data.json</button>
+      <div id="ghst" style="margin-top:10px"></div>
+    </div>
+    <div class="box">
+      <h3>🔐 Change Admin Credentials</h3>
+      <div class="row"><div><label>Username</label><input id="nu" value="${esc(D.user||'admin')}"></div><div><label>New Password (leave blank to keep current)</label><input id="np" type="password"></div></div>
+      <button class="b p" onclick="A.saveCredentials()">Update Credentials</button>
+    </div>`
   }
-  return`<div class="box"><label>PUBLISH TEXT: copy this whole text into data.json in your GitHub repo (commit) to make your changes live manually.</label><textarea id="bk" rows="8">${esc(JSON.stringify({...D,pw:undefined,leads:[],posts:D.posts.map(p=>({...p,note:''}))}))}</textarea><div style="margin-top:8px"><button class="b" onclick="navigator.clipboard.writeText($('#bk').value);alert('Copied to clipboard!')">Copy JSON</button> <button class="b" onclick="A.imp()">Restore from text above</button></div></div>`
+
+  return`<div class="box"><label>PUBLISH TEXT: copy this whole text into data.json in your GitHub repo to update manually.</label><textarea id="bk" rows="8">${esc(JSON.stringify({...D,pw:undefined,leads:[],posts:D.posts.map(p=>({...p,note:''}))}))}</textarea><div style="margin-top:8px"><button class="b" onclick="navigator.clipboard.writeText($('#bk').value);alert('Copied to clipboard!')">Copy JSON</button> <button class="b" onclick="A.imp()">Restore from text above</button></div></div>`
 }
 
-function render(){theme();const h=location.hash.slice(1);$('#app').innerHTML=h==='admin'?adminV():view(h);scrollTo(0,0)}
-window.addEventListener('hashchange',()=>{if(D)render()});load().then(render);
+function render(){
+  theme();
+  const h=location.hash.slice(1);
+  $('#app').innerHTML=h==='admin'?adminV():view(h);
+  scrollTo(0,0);
+}
+
+window.addEventListener('hashchange',()=>{if(D)render()});
+load().then(render);
 </script></body></html>
