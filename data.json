@@ -1,0 +1,87 @@
+{
+  "s": {
+    "name": "Times of Lakshadweep",
+    "tag": "News from the islands, first.",
+    "logo": "",
+    "pri": "#0a6e8a",
+    "acc": "#e8590c",
+    "font": "Georgia, serif",
+    "foot": "© 2026 Times of Lakshadweep. All rights reserved.",
+    "tpl": "standard",
+    "showTicker": true,
+    "tickerTitle": "LATEST UPDATES",
+    "user": "admin",
+    "contact": {
+      "email": "editor@timesoflakshadweep.com",
+      "phone": "+91 94000 00000",
+      "address": "Kavaratti, Lakshadweep 682555"
+    },
+    "social": {
+      "whatsapp": "",
+      "twitter": "",
+      "facebook": "",
+      "instagram": "",
+      "telegram": ""
+    },
+    "gh": {
+      "owner": "Protapi7",
+      "repo": "timesoflakshadweep",
+      "branch": "main",
+      "token": ""
+    }
+  },
+  "cats": [
+    "News",
+    "Politics",
+    "Lakshadweep",
+    "Education",
+    "Sports",
+    "Jobs",
+    "Feature Stories",
+    "Editorial",
+    "Religious",
+    "Health"
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "title": "Welcome to Times of Lakshadweep",
+      "cat": "News",
+      "img": "",
+      "sum": "Your independent island news and cultural portal is live on GitHub.",
+      "body": "<p>Welcome to <b>Times of Lakshadweep</b>. This website is now live, featuring full coverage of island affairs, administration updates, education, sports, jobs, and lifestyle.</p><p>News editors can log in to the <b>Admin Portal</b> to write, edit, upload photos, and publish new stories in real time.</p>",
+      "tpl": "default",
+      "st": "pub",
+      "feat": true,
+      "author": "Chief Editor",
+      "date": "2026-11-22T00:00:00.000Z",
+      "note": ""
+    }
+  ],
+  "pages": [
+    {
+      "id": "about",
+      "title": "About Us",
+      "body": "<p><b>Times of Lakshadweep</b> is dedicated to bringing independent, accurate, and timely journalism to the people of Lakshadweep and the global diaspora.</p><p>We cover local news, governance policies, marine environment, education, sports, and cultural heritage from every island including Kavaratti, Agatti, Andrott, Amini, Kadmat, Kiltan, Chetlat, Bitra, Kalpeni, and Minicoy.</p>",
+      "menu": true
+    },
+    {
+      "id": "contact",
+      "title": "Contact & Press Inquiries",
+      "body": "<p>We welcome news tips, opinion submissions, press releases, and advertising queries.</p><p><b>Email:</b> editor@timesoflakshadweep.com<br><b>Location:</b> Lakshadweep, India</p>",
+      "menu": true
+    }
+  ],
+  "ads": {
+    "header": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
+    "side": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
+    "inart": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
+    "footer": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
+    "sticky": { "on": false, "type": "img", "src": "", "link": "", "code": "" }
+  },
+  "leads": [
+    { "id": "l1", "src": "Dweep Malayali", "title": "LTCC appoints new general secretaries", "url": "https://dweepmalayali.com/lakshadweep/20261122/4758.html", "done": false },
+    { "id": "l2", "src": "Dweep Diary", "title": "Phoenix Clean Atoll project launched in Chetlat", "url": "https://dweepdiary.in/fenix-chetlath/", "done": false },
+    { "id": "l3", "src": "Dweep Malayali", "title": "Mahfile Mahabba 2K26 begins Nov 27 in Agatti", "url": "https://dweepmalayali.com/lakshadweep/20261121/4755.html", "done": false }
+  ]
+}
