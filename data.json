@@ -1,87 +1,331 @@
 {
-  "s": {
-    "name": "Times of Lakshadweep",
-    "tag": "News from the islands, first.",
-    "logo": "",
-    "pri": "#0a6e8a",
-    "acc": "#e8590c",
-    "font": "Georgia, serif",
-    "foot": "© 2026 Times of Lakshadweep. All rights reserved.",
-    "tpl": "standard",
-    "showTicker": true,
-    "tickerTitle": "LATEST UPDATES",
-    "user": "admin",
-    "contact": {
-      "email": "editor@timesoflakshadweep.com",
-      "phone": "+91 94000 00000",
-      "address": "Kavaratti, Lakshadweep 682555"
-    },
-    "social": {
-      "whatsapp": "",
-      "twitter": "",
-      "facebook": "",
-      "instagram": "",
-      "telegram": ""
-    },
-    "gh": {
-      "owner": "Protapi7",
-      "repo": "timesoflakshadweep",
-      "branch": "main",
-      "token": ""
-    }
+ "s": {
+  "name": "Times of Lakshadweep",
+  "tag": "News from the islands, first.",
+  "logo": "",
+  "pri": "#0a6e8a",
+  "acc": "#e8590c",
+  "font": "Georgia, serif",
+  "foot": "© 2026 Times of Lakshadweep. All rights reserved.",
+  "tpl": "standard",
+  "showTicker": true,
+  "tickerTitle": "LATEST UPDATES",
+  "user": "admin",
+  "contact": {
+   "email": "editor@timesoflakshadweep.com",
+   "phone": "+91 94000 00000",
+   "address": "Kavaratti, Lakshadweep 682555"
   },
-  "cats": [
-    "News",
-    "Politics",
-    "Lakshadweep",
-    "Education",
-    "Sports",
-    "Jobs",
-    "Feature Stories",
-    "Editorial",
-    "Religious",
-    "Health"
-  ],
-  "posts": [
-    {
-      "id": "p1",
-      "title": "Welcome to Times of Lakshadweep",
-      "cat": "News",
-      "img": "",
-      "sum": "Your independent island news and cultural portal is live on GitHub.",
-      "body": "<p>Welcome to <b>Times of Lakshadweep</b>. This website is now live, featuring full coverage of island affairs, administration updates, education, sports, jobs, and lifestyle.</p><p>News editors can log in to the <b>Admin Portal</b> to write, edit, upload photos, and publish new stories in real time.</p>",
-      "tpl": "default",
-      "st": "pub",
-      "feat": true,
-      "author": "Chief Editor",
-      "date": "2026-11-22T00:00:00.000Z",
-      "note": ""
-    }
-  ],
-  "pages": [
-    {
-      "id": "about",
-      "title": "About Us",
-      "body": "<p><b>Times of Lakshadweep</b> is dedicated to bringing independent, accurate, and timely journalism to the people of Lakshadweep and the global diaspora.</p><p>We cover local news, governance policies, marine environment, education, sports, and cultural heritage from every island including Kavaratti, Agatti, Andrott, Amini, Kadmat, Kiltan, Chetlat, Bitra, Kalpeni, and Minicoy.</p>",
-      "menu": true
-    },
-    {
-      "id": "contact",
-      "title": "Contact & Press Inquiries",
-      "body": "<p>We welcome news tips, opinion submissions, press releases, and advertising queries.</p><p><b>Email:</b> editor@timesoflakshadweep.com<br><b>Location:</b> Lakshadweep, India</p>",
-      "menu": true
-    }
-  ],
-  "ads": {
-    "header": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
-    "side": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
-    "inart": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
-    "footer": { "on": false, "type": "img", "src": "", "link": "", "code": "" },
-    "sticky": { "on": false, "type": "img", "src": "", "link": "", "code": "" }
+  "social": {
+   "whatsapp": "",
+   "twitter": "",
+   "facebook": "",
+   "instagram": "",
+   "telegram": ""
   },
-  "leads": [
-    { "id": "l1", "src": "Dweep Malayali", "title": "LTCC appoints new general secretaries", "url": "https://dweepmalayali.com/lakshadweep/20261122/4758.html", "done": false },
-    { "id": "l2", "src": "Dweep Diary", "title": "Phoenix Clean Atoll project launched in Chetlat", "url": "https://dweepdiary.in/fenix-chetlath/", "done": false },
-    { "id": "l3", "src": "Dweep Malayali", "title": "Mahfile Mahabba 2K26 begins Nov 27 in Agatti", "url": "https://dweepmalayali.com/lakshadweep/20261121/4755.html", "done": false }
-  ]
+  "gh": {
+   "owner": "Protapi7",
+   "repo": "timesoflakshadweep",
+   "branch": "main",
+   "token": ""
+  }
+ },
+ "cats": [
+  "News",
+  "Politics",
+  "Lakshadweep",
+  "Education",
+  "Sports",
+  "Jobs",
+  "Feature Stories",
+  "Editorial",
+  "Religious",
+  "Health"
+ ],
+ "posts": [
+  {
+   "id": "p1",
+   "title": "Welcome to Times of Lakshadweep",
+   "cat": "News",
+   "img": "",
+   "sum": "Your independent island news and cultural portal is live on GitHub.",
+   "body": "<p>Welcome to <b>Times of Lakshadweep</b>. This website is now live, featuring full coverage of island affairs, administration updates, education, sports, jobs, and lifestyle.</p><p>News editors can log in to the <b>Admin Portal</b> to write, edit, upload photos, and publish new stories in real time.</p>",
+   "tpl": "default",
+   "st": "pub",
+   "feat": true,
+   "author": "Chief Editor",
+   "date": "2026-11-22T00:00:00.000Z",
+   "note": ""
+  }
+ ],
+ "pages": [
+  {
+   "id": "about",
+   "title": "About Us",
+   "body": "<p><b>Times of Lakshadweep</b> is dedicated to bringing independent, accurate, and timely journalism to the people of Lakshadweep and the global diaspora.</p><p>We cover local news, governance policies, marine environment, education, sports, and cultural heritage from every island including Kavaratti, Agatti, Andrott, Amini, Kadmat, Kiltan, Chetlat, Bitra, Kalpeni, and Minicoy.</p>",
+   "menu": true
+  },
+  {
+   "id": "contact",
+   "title": "Contact & Press Inquiries",
+   "body": "<p>We welcome news tips, opinion submissions, press releases, and advertising queries.</p><p><b>Email:</b> editor@timesoflakshadweep.com<br><b>Location:</b> Lakshadweep, India</p>",
+   "menu": true
+  }
+ ],
+ "ads": {
+  "header": {
+   "on": false,
+   "type": "img",
+   "src": "",
+   "link": "",
+   "code": ""
+  },
+  "side": {
+   "on": false,
+   "type": "img",
+   "src": "",
+   "link": "",
+   "code": ""
+  },
+  "inart": {
+   "on": false,
+   "type": "img",
+   "src": "",
+   "link": "",
+   "code": ""
+  },
+  "footer": {
+   "on": false,
+   "type": "img",
+   "src": "",
+   "link": "",
+   "code": ""
+  },
+  "sticky": {
+   "on": false,
+   "type": "img",
+   "src": "",
+   "link": "",
+   "code": ""
+  }
+ },
+ "leads": [
+  {
+   "id": "l1795373070058_tpst",
+   "src": "Dweep Diary",
+   "title": "കക്കാട പൂക്കോയാ അഗത്തി മരണപ്പെട്ടു.",
+   "url": "https://dweepdiary.in/%e0%b4%95%e0%b4%95%e0%b5%8d%e0%b4%95%e0%b4%be%e0%b4%9f-%e0%b4%aa%e0%b5%82%e0%b4%95%e0%b5%8d%e0%b4%95%e0%b5%8b%e0%b4%af%e0%b4%be-%e0%b4%85%e0%b4%97%e0%b4%a4%e0%b5%8d%e0%b4%a4%e0%b4%bf-%e0%b4%ae/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%2595%25e0%25b4%2595%25e0%25b5%258d%25e0%25b4%2595%25e0%25b4%25be%25e0%25b4%259f-%25e0%25b4%25aa%25e0%25b5%2582%25e0%25b4%2595%25e0%25b5%258d%25e0%25b4%2595%25e0%25b5%258b%25e0%25b4%25af%25e0%25b4%25be-%25e0%25b4%2585%25e0%25b4%2597%25e0%25b4%25a4%25e0%25b5%258d%25e0%25b4%25a4%25e0%25b4%25bf-%25e0%25b4%25ae",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_9lwz",
+   "src": "Dweep Diary",
+   "title": "തസ്കിയ സമ്മേളനം സമാപിച്ചു",
+   "url": "https://dweepdiary.in/%e0%b4%a4%e0%b4%b8%e0%b5%8d%e0%b4%95%e0%b4%bf%e0%b4%af-%e0%b4%b8%e0%b4%ae%e0%b5%8d%e0%b4%ae%e0%b5%87%e0%b4%b3%e0%b4%a8%e0%b4%82-%e0%b4%b8%e0%b4%ae%e0%b4%be%e0%b4%aa%e0%b4%bf%e0%b4%9a%e0%b5%8d%e0%b4%9a/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%25a4%25e0%25b4%25b8%25e0%25b5%258d%25e0%25b4%2595%25e0%25b4%25bf%25e0%25b4%25af-%25e0%25b4%25b8%25e0%25b4%25ae%25e0%25b5%258d%25e0%25b4%25ae%25e0%25b5%2587%25e0%25b4%25b3%25e0%25b4%25a8%25e0%25b4%2582-%25e0%25b4%25b8%25e0%25b4%25ae%25e0%25b4%25be%25e0%25b4%25aa%25e0%25b4%25bf%25e0%25b4%259a%25e0%25b5%258d%25e0%25b4%259a",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_3olq",
+   "src": "Dweep Diary",
+   "title": "ദേശീയ ലഹരിവിരുദ്ധ ക്യാമ്പയിൻ വാർത്താക്കുറിപ്പിൽ കിൽത്താൻ എൻഎസ്എസ് യൂണിറ്റിന്റെ ചിത്രങ്ങൾ",
+   "url": "https://dweepdiary.in/%e0%b4%a6%e0%b5%87%e0%b4%b6%e0%b5%80%e0%b4%af-%e0%b4%b2%e0%b4%b9%e0%b4%b0%e0%b4%bf%e0%b4%b5%e0%b4%bf%e0%b4%b0%e0%b5%81%e0%b4%a6%e0%b5%8d%e0%b4%a7-%e0%b4%95%e0%b5%8d%e0%b4%af%e0%b4%be%e0%b4%ae%e0%b5%8d/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%25a6%25e0%25b5%2587%25e0%25b4%25b6%25e0%25b5%2580%25e0%25b4%25af-%25e0%25b4%25b2%25e0%25b4%25b9%25e0%25b4%25b0%25e0%25b4%25bf%25e0%25b4%25b5%25e0%25b4%25bf%25e0%25b4%25b0%25e0%25b5%2581%25e0%25b4%25a6%25e0%25b5%258d%25e0%25b4%25a7-%25e0%25b4%2595%25e0%25b5%258d%25e0%25b4%25af%25e0%25b4%25be%25e0%25b4%25ae%25e0%25b5%258d",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_xn0q",
+   "src": "Dweep Diary",
+   "title": "കുടുംബ പെൻഷൻ ഒന്നിലധികം പേർക്ക് ഒരേസമയം ലഭിക്കും; പങ്കുവെക്കൽ സംബന്ധിച്ച് കേന്ദ്ര സർക്കാരിന്റെ പുതിയ നിർദേശം",
+   "url": "https://dweepdiary.in/%e0%b4%95%e0%b5%81%e0%b4%9f%e0%b5%81%e0%b4%82%e0%b4%ac-%e0%b4%aa%e0%b5%86%e0%b5%bb%e0%b4%b7%e0%b5%bb-%e0%b4%92%e0%b4%a8%e0%b5%8d%e0%b4%a8%e0%b4%bf%e0%b4%b2%e0%b4%a7%e0%b4%bf%e0%b4%95%e0%b4%82/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%2595%25e0%25b5%2581%25e0%25b4%259f%25e0%25b5%2581%25e0%25b4%2582%25e0%25b4%25ac-%25e0%25b4%25aa%25e0%25b5%2586%25e0%25b5%25bb%25e0%25b4%25b7%25e0%25b5%25bb-%25e0%25b4%2592%25e0%25b4%25a8%25e0%25b5%258d%25e0%25b4%25a8%25e0%25b4%25bf%25e0%25b4%25b2%25e0%25b4%25a7%25e0%25b4%25bf%25e0%25b4%2595%25e0%25b4%2582",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_q1hu",
+   "src": "Dweep Diary",
+   "title": "വകുപ്പുകൾ ഒന്നിക്കുന്നു; ജീവനക്കാരിൽ ആശങ്ക ശക്തം",
+   "url": "https://dweepdiary.in/%e0%b4%b5%e0%b4%95%e0%b5%81%e0%b4%aa%e0%b5%8d%e0%b4%aa%e0%b5%81%e0%b4%95%e0%b5%be-%e0%b4%92%e0%b4%a8%e0%b5%8d%e0%b4%a8%e0%b4%bf%e0%b4%95%e0%b5%8d%e0%b4%95%e0%b5%81%e0%b4%a8%e0%b5%8d%e0%b4%a8%e0%b5%81/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%25b5%25e0%25b4%2595%25e0%25b5%2581%25e0%25b4%25aa%25e0%25b5%258d%25e0%25b4%25aa%25e0%25b5%2581%25e0%25b4%2595%25e0%25b5%25be-%25e0%25b4%2592%25e0%25b4%25a8%25e0%25b5%258d%25e0%25b4%25a8%25e0%25b4%25bf%25e0%25b4%2595%25e0%25b5%258d%25e0%25b4%2595%25e0%25b5%2581%25e0%25b4%25a8%25e0%25b5%258d%25e0%25b4%25a8%25e0%25b5%2581",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_go5e",
+   "src": "Dweep Diary",
+   "title": "ദേശീയ പട്ടികവർഗ കമ്മീഷൻ അംഗവുമായി കൂടിക്കാഴ്ച നടത്തി എൻസിപി (എസ്.പി) നേതാക്കൾ",
+   "url": "https://dweepdiary.in/%e0%b4%a6%e0%b5%87%e0%b4%b6%e0%b5%80%e0%b4%af-%e0%b4%aa%e0%b4%9f%e0%b5%8d%e0%b4%9f%e0%b4%bf%e0%b4%95%e0%b4%b5%e0%b5%bc%e0%b4%97-%e0%b4%95%e0%b4%ae%e0%b5%8d%e0%b4%ae%e0%b5%80%e0%b4%b7%e0%b5%bb/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%25a6%25e0%25b5%2587%25e0%25b4%25b6%25e0%25b5%2580%25e0%25b4%25af-%25e0%25b4%25aa%25e0%25b4%259f%25e0%25b5%258d%25e0%25b4%259f%25e0%25b4%25bf%25e0%25b4%2595%25e0%25b4%25b5%25e0%25b5%25bc%25e0%25b4%2597-%25e0%25b4%2595%25e0%25b4%25ae%25e0%25b5%258d%25e0%25b4%25ae%25e0%25b5%2580%25e0%25b4%25b7%25e0%25b5%25bb",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_kin7",
+   "src": "Dweep Diary",
+   "title": "ജനവിരുദ്ധ നയങ്ങൾക്കെതിരെ തുടർ പ്രക്ഷോഭങ്ങൾ ശക്തമാക്കാൻ കോൺഗ്രസ്സ് തീരുമാനം",
+   "url": "https://dweepdiary.in/%e0%b4%9c%e0%b4%a8%e0%b4%b5%e0%b4%bf%e0%b4%b0%e0%b5%81%e0%b4%a6%e0%b5%8d%e0%b4%a7-%e0%b4%a8%e0%b4%af%e0%b4%99%e0%b5%8d%e0%b4%99%e0%b5%be%e0%b4%95%e0%b5%8d%e0%b4%95%e0%b5%86%e0%b4%a4%e0%b4%bf%e0%b4%b0/?utm_source=rss&utm_medium=rss&utm_campaign=%25e0%25b4%259c%25e0%25b4%25a8%25e0%25b4%25b5%25e0%25b4%25bf%25e0%25b4%25b0%25e0%25b5%2581%25e0%25b4%25a6%25e0%25b5%258d%25e0%25b4%25a7-%25e0%25b4%25a8%25e0%25b4%25af%25e0%25b4%2599%25e0%25b5%258d%25e0%25b4%2599%25e0%25b5%25be%25e0%25b4%2595%25e0%25b5%258d%25e0%25b4%2595%25e0%25b5%2586%25e0%25b4%25a4%25e0%25b4%25bf%25e0%25b4%25b0",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_j2e9",
+   "src": "Dweep Diary",
+   "title": "കവരത്തിയിൽ നടന്ന സർവ്വകക്ഷി യോഗത്തിൽ എല്ലാ രാഷ്ട്രീയ പാർട്ടികളെയും ഉൾപ്പെടുത്തി സംയുക്ത വേദി രൂപീകരിക്കാൻ തീരുമാനം",
+   "url": "https://dweepdiary.in/all-political-parties-lakshadweep/?utm_source=rss&utm_medium=rss&utm_campaign=all-political-parties-lakshadweep",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_0880",
+   "src": "Dweep Diary",
+   "title": "ടി. കാസിമിനും എം. അലി അക്ബറിനും ലക്ഷദ്വീപ് കോൺഗ്രസിൽ ജനറൽ സെക്രട്ടറി പദവി",
+   "url": "https://dweepdiary.in/lakshadweep-congress/?utm_source=rss&utm_medium=rss&utm_campaign=lakshadweep-congress",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_x88l",
+   "src": "Dweep Diary",
+   "title": "ചെത്ത്ലാത്തിൽ ‘ ഫീനിക്സ് ക്ലീൻ അറ്റോൾ’ പദ്ധതിക്ക് തുടക്കം; സമുദ്ര-തീരദേശ സംരക്ഷണത്തിന് തുടർപ്രവർത്തനങ്ങളുമായി ഫീനിക്സ്.",
+   "url": "https://dweepdiary.in/fenix-chetlath/?utm_source=rss&utm_medium=rss&utm_campaign=fenix-chetlath",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_nuon",
+   "src": "Dweep Malayali",
+   "title": "മെഡിസിൻ ഫാക്കൽറ്റിയുടെ കീഴിൽ ക്ലിനിക്കൽ മൈക്രോബയോളജിയിൽ ഡോക്ടറേറ്റ്: ചരിത്രനേട്ടവുമായി ഡോ. മുഹമ്മദ് അനീസ്",
+   "url": "https://dweepmalayali.com/lakshadweep/20261108/4697.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_uabb",
+   "src": "Dweep Malayali",
+   "title": "എൽ.എസ്.ജി: 35 എഡിഷനുകൾ, 26 കിരീടം;  ആന്ത്രോത്ത് ഫുന്ന അങ്ങന ഇല്ല്യാക്കളേ",
+   "url": "https://dweepmalayali.com/lakshadweep/20261110/4700.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_eqxs",
+   "src": "Dweep Malayali",
+   "title": "കൽപ്പേനിയിൽ മാതൃക തീർത്ത് കിൽത്താനിലെ വിദ്യാർത്ഥികൾ; മടങ്ങും മുൻപ് പള്ളി പരിസരം ശുചീകരിച്ചു",
+   "url": "https://dweepmalayali.com/lakshadweep/20261110/4703.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_x2gd",
+   "src": "Dweep Malayali",
+   "title": "ഗസ്റ്റ് അധ്യാപക സ്കിൽ ടെസ്റ്റ് ഇന്ന്; ബഹിഷ്കരണവുമായി ഉദ്യോഗാർഥികൾ",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4706.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_d7p8",
+   "src": "Dweep Malayali",
+   "title": "അഗത്തിയിൽ അടിയന്തര മെഡിക്കൽ ദൗത്യം: സ്കൂബ ഡൈവിംഗിനിടെ അപകടത്തിൽപ്പെട്ട യുവതിയെ കൊച്ചിയിലേക്ക് മാറ്റി",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4709.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_mqme",
+   "src": "Dweep Malayali",
+   "title": "ലക്ഷദ്വീപ് കേന്ദ്രീകരിച്ച് ‘ബ്ലൂ ഇക്കോണമി’: ചൂര മത്സ്യബന്ധനത്തിനും കടൽപ്പായൽ കൃഷിക്കും ഉണർവേകാൻ പുതിയ പദ്ധതികൾ",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4712.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_ny0u",
+   "src": "Dweep Malayali",
+   "title": "ഡിവൈഎഫ്ഐ കവരത്തി ഐലന്റ് കമ്മിറ്റി ഓഫീസ് ഉദ്ഘാടനം ചെയ്തു",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4715.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_76dz",
+   "src": "Dweep Malayali",
+   "title": "ആന്ത്രോത്ത് ദ്വീപിന് സമീപം നിയമവിരുദ്ധ മീൻപിടിത്തം: കോഴിക്കോട് ചാലിയം സ്വദേശിയുടെ ബോട്ട് കസ്റ്റഡിയിൽ",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4718.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_1awo",
+   "src": "Dweep Malayali",
+   "title": "ബേപ്പൂർ – ലക്ഷദ്വീപ് ദിനംപ്രതിയുള്ള സ്വകാര്യ വെസ്സൽ സർവീസ്: ‘തേജ’ ബേപ്പൂർ തുറമുഖത്തെത്തി",
+   "url": "https://dweepmalayali.com/lakshadweep/20261111/4721.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_leqe",
+   "src": "Dweep Malayali",
+   "title": "ദേശീയ കോഎക്സിസ്റ്റൻസ് ഫെലോഷിപ്പ്: കാമാൻ അംഗങ്ങളായ സാബിത്തിനും അഹ്സനയും തിരഞ്ഞെടുക്കപ്പെട്ടു",
+   "url": "https://dweepmalayali.com/lakshadweep/20261112/4724.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_vvsn",
+   "src": "Dweep Malayali",
+   "title": "IRBn ഉദ്യോഗസ്ഥരുടെ ഹോം പോസ്റ്റിംഗ് നയം പിൻവലിച്ച് ലക്ഷദ്വീപ് ഭരണകൂടം; 2008-ലെ ഉത്തരവാണ് പിൻവലിച്ചത്",
+   "url": "https://dweepmalayali.com/lakshadweep/20261112/4727.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_oavt",
+   "src": "Dweep Malayali",
+   "title": "ലക്ഷദ്വീപിൽ കൂട്ടപ്പിരിച്ചുവിടൽ തുടരുന്നു; എൻ.എച്ച്.എമ്മിന് കീഴിലുള്ള എട്ട് കരാർ ജീവനക്കാരെ ഒഴിവാക്കി",
+   "url": "https://dweepmalayali.com/lakshadweep/20261113/4730.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_puh6",
+   "src": "Dweep Malayali",
+   "title": "നാഷണൽ ആയുഷ് മിഷനിൽ വിവിധ കരാർ നിയമനങ്ങൾ; അപേക്ഷകൾ ക്ഷണിച്ചു.",
+   "url": "https://dweepmalayali.com/lakshadweep/20261115/4733.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_ip3w",
+   "src": "Dweep Malayali",
+   "title": "തണൽ ലക്ഷദ്വീപും സാമൂഹികക്ഷേമ വകുപ്പും സംയുക്തമായി ഭിന്നശേഷിക്കാർക്ക് ഇലക്ട്രോണിക് വീൽചെയറുകൾ വിതരണം ചെയ്തു",
+   "url": "https://dweepmalayali.com/lakshadweep/20261115/4736.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_0j8d",
+   "src": "Dweep Malayali",
+   "title": "യാത്രയും ചരക്കുനീക്കവും വിരൽത്തുമ്പിൽ; ദ്വീപിൻ്റെ സ്വന്തം ഓൺലൈൻ ടാക്സി ബുക്കിംഗ് ആപ്പ് Solo Finder പ്രവർത്തനസജ്ജം. വീഡിയോ കാണാം ▶️",
+   "url": "https://dweepmalayali.com/lakshadweep/20261117/4741.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_jiv2",
+   "src": "Dweep Malayali",
+   "title": "ദ്വീപുകാരുടെ അവകാശങ്ങൾ സംരക്ഷിക്കണം. കേന്ദ്ര പട്ടികവർഗ്ഗ കമ്മീഷൻ അംഗവുമായി കൂടിക്കാഴ്ച നടത്തി എൻ.സി.പി(എസ്.പി) നേതാക്കൾ.",
+   "url": "https://dweepmalayali.com/lakshadweep/20261117/4745.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_i55g",
+   "src": "Dweep Malayali",
+   "title": "ലക്ഷദ്വീപ് ഭരണകൂടത്തിന്റെ ജനദ്രോഹ നയങ്ങൾക്കെതിരെ പ്രക്ഷോഭം ശക്തമാക്കാൻ എൽ.ടി.സി.സി",
+   "url": "https://dweepmalayali.com/lakshadweep/20261120/4749.html",
+   "done": false
+  },
+  {
+   "id": "l1795373070058_ijbe",
+   "src": "Dweep Malayali",
+   "title": "സർവ്വകക്ഷി യോഗം വിജയകരം. ഇനി ഒറ്റക്കെട്ടായ പോരാട്ടം. ലക്ഷദ്വീപ് ജോയിൻ്റ് ഫോറം രൂപീകരിക്കും.",
+   "url": "https://dweepmalayali.com/lakshadweep/20261120/4752.html",
+   "done": false
+  },
+  {
+   "id": "l1",
+   "src": "Dweep Malayali",
+   "title": "LTCC appoints new general secretaries",
+   "url": "https://dweepmalayali.com/lakshadweep/20261122/4758.html",
+   "done": false
+  },
+  {
+   "id": "l2",
+   "src": "Dweep Diary",
+   "title": "Phoenix Clean Atoll project launched in Chetlat",
+   "url": "https://dweepdiary.in/fenix-chetlath/",
+   "done": false
+  },
+  {
+   "id": "l3",
+   "src": "Dweep Malayali",
+   "title": "Mahfile Mahabba 2K26 begins Nov 27 in Agatti",
+   "url": "https://dweepmalayali.com/lakshadweep/20261121/4755.html",
+   "done": false
+  }
+ ]
 }
