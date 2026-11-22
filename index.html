@@ -37,7 +37,7 @@ table{width:100%;border-collapse:collapse;margin-top:10px}td,th{padding:9px;bord
 </style></head><body><div id="app"></div>
 <script>
 const KEY='tol_v1',HASH='a4f70df995ea8b3d45b2fa616dfb788ade4c1aa77ffd4330c62013b53dba3be4';
-const DEFAULT_GH={owner:'Protapi7',repo:'timesoflakshadweep',branch:'main',token:localStorage.getItem('tol_gh_token')||''};
+const DEFAULT_GH={owner:'Protapi7',repo:'timesoflakshadweep',branch:'main'};
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $=s=>document.querySelector(s);
 const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -81,7 +81,7 @@ async function load(forceRemote=false){
   D.leads=D.leads||[];
   D.user=D.user||'admin';
   D.s.gh=D.s.gh||{...DEFAULT_GH};
-  D.s.gh.token=localStorage.getItem('tol_gh_token')||D.s.gh.token||'';
+  if(D.s.gh.token) delete D.s.gh.token;
 }
 
 function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){alert('Storage full. Use smaller or fewer images.')}}
@@ -274,13 +274,12 @@ const A={
     const owner=gh.owner||DEFAULT_GH.owner;
     const repo=gh.repo||DEFAULT_GH.repo;
     const branch=gh.branch||DEFAULT_GH.branch;
-    let token=gh.token||localStorage.getItem('tol_gh_token')||'';
+    let token=localStorage.getItem('tol_gh_token')||'';
 
     if(!token){
       token=prompt('Enter your GitHub Personal Access Token (PAT) to publish live:');
       if(!token)return alert('Token is required to publish to GitHub.');
       localStorage.setItem('tol_gh_token', token.trim());
-      D.s.gh.token = token.trim();
     }
 
     const st=$('#pub-status')||$('#ghst');
@@ -298,7 +297,16 @@ const A={
       const g=await fetch(url+'?ref='+branch,{headers:h});
       if(g.ok){const fd=await g.json();sha=fd.sha;}
 
-      const clean={...D,pw:undefined};
+      // Sanitize data - NEVER include personal access token or password inside data.json in repository!
+      const clean=JSON.parse(JSON.stringify(D));
+      delete clean.pw;
+      if(clean.s && clean.s.gh){
+        delete clean.s.gh.token;
+      }
+      if(D.s && D.s.gh){
+        delete D.s.gh.token;
+      }
+
       const utf8Bytes=new TextEncoder().encode(JSON.stringify(clean,null,1));
       let binStr='';
       for(let i=0;i<utf8Bytes.length;i+=0x8000){binStr+=String.fromCharCode(...utf8Bytes.subarray(i,i+0x8000));}
@@ -321,8 +329,12 @@ const A={
         render();
       }else{
         const err=await p.json().catch(()=>({}));
-        if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ GitHub Error: ${esc(err.message||'Failed to update')}</span>`;
-        alert('GitHub Error: '+(err.message||'Failed to update'));
+        let msg=err.message||'Failed to update';
+        if(err.errors&&Array.isArray(err.errors)){
+          msg+=': '+err.errors.map(e=>e.message||JSON.stringify(e)).join('; ');
+        }
+        if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ GitHub Error: ${esc(msg)}</span>`;
+        alert('GitHub Error: '+msg);
       }
     }catch(e){
       if(st)st.innerHTML=`<span style="color:#b91c1c;font-weight:700">❌ Error: ${esc(e.message)}</span>`;
@@ -358,7 +370,7 @@ const A={
   leadDraft(id){const l=D.leads.find(x=>x.id===id);l.done=true;save();this.tab='news';this.newPost({title:l.title,note:'Lead from '+l.src+': '+l.url})},
   impLeads(){try{const j=JSON.parse($('#li').value);let n=0;if(j&&j.posts){j.posts.forEach((p,i)=>D.posts.unshift({...p,id:'p'+Date.now()+'_'+i,st:'draft',date:p.date||new Date().toISOString()}));save();render();return alert(j.posts.length+' draft(s) imported.')}const a=j;a.forEach(l=>{if(l.url&&!D.leads.some(x=>x.url===l.url)){D.leads.unshift({id:'l'+Date.now()+'_'+n,src:l.src||'',title:l.title||'',url:l.url,done:false});n++}});save();render();alert(n+' new leads imported')}catch(e){alert('Invalid leads JSON')}},
   delLead(id){D.leads=D.leads.filter(l=>l.id!==id);save();render()},
-  dlData(){const b=new Blob([JSON.stringify({...D,pw:undefined,leads:D.leads||[]},null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='data.json';a.click();URL.revokeObjectURL(u)},
+  dlData(){const clean=JSON.parse(JSON.stringify({...D,pw:undefined,leads:D.leads||[]}));if(clean.s&&clean.s.gh)delete clean.s.gh.token;const b=new Blob([JSON.stringify(clean,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='data.json';a.click();URL.revokeObjectURL(u)},
   imp(){try{const j=JSON.parse($('#bk').value);if(!j.s||!j.posts)throw 0;j.leads=j.leads||[];j.pw=D.pw;D=j;save();theme();render();alert('Restored successfully!')}catch(e){alert('Invalid backup JSON')}}
 };
 
@@ -547,7 +559,7 @@ function tab(){
       <h3>🚀 Publish Live to GitHub Pages</h3>
       <p class="m">Direct personal access grant is configured to push updates to GitHub with 1 click.</p>
       <div class="row"><div><label>GitHub Owner</label><input id="gho" value="${esc(gh.owner||DEFAULT_GH.owner)}"></div><div><label>Repo Name</label><input id="ghr" value="${esc(gh.repo||DEFAULT_GH.repo)}"></div></div>
-      <div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||DEFAULT_GH.branch)}"></div><div><label>Personal Access Token (saved in your browser)</label><input id="ght" type="password" value="${esc(localStorage.getItem('tol_gh_token')||gh.token||'')}" onchange="localStorage.setItem('tol_gh_token',this.value.trim())"></div></div>
+      <div class="row"><div><label>Branch</label><input id="ghb" value="${esc(gh.branch||DEFAULT_GH.branch)}"></div><div><label>Personal Access Token (saved locally in browser only - never committed to public repo)</label><input id="ght" type="password" value="${esc(localStorage.getItem('tol_gh_token')||'')}" onchange="localStorage.setItem('tol_gh_token',this.value.trim())" placeholder="gho_..."></div></div>
       <button class="b g" style="background:#16a34a;padding:9px 16px" onclick="A.pushGh()">🚀 Publish Live to GitHub</button>
       <button class="b" onclick="A.syncFromGh()">🔄 Refresh from GitHub</button>
       <button class="b" onclick="A.dlData()">💾 Download data.json</button>
@@ -560,7 +572,9 @@ function tab(){
     </div>`
   }
 
-  return`<div class="box"><label>PUBLISH TEXT: copy this whole text into data.json in your GitHub repo to update manually.</label><textarea id="bk" rows="8">${esc(JSON.stringify({...D,pw:undefined,leads:[],posts:D.posts.map(p=>({...p,note:''}))}))}</textarea><div style="margin-top:8px"><button class="b" onclick="navigator.clipboard.writeText($('#bk').value);alert('Copied to clipboard!')">Copy JSON</button> <button class="b" onclick="A.imp()">Restore from text above</button></div></div>`
+  const cleanBk=JSON.parse(JSON.stringify({...D,pw:undefined,leads:[],posts:D.posts.map(p=>({...p,note:''}))}));
+  if(cleanBk.s&&cleanBk.s.gh)delete cleanBk.s.gh.token;
+  return`<div class="box"><label>PUBLISH TEXT: copy this whole text into data.json in your GitHub repo to update manually.</label><textarea id="bk" rows="8">${esc(JSON.stringify(cleanBk,null,1))}</textarea><div style="margin-top:8px"><button class="b" onclick="navigator.clipboard.writeText($('#bk').value);alert('Copied to clipboard!')">Copy JSON</button> <button class="b" onclick="A.imp()">Restore from text above</button></div></div>`
 }
 
 function render(){
